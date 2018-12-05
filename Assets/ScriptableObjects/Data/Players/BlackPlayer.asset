@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85704a6dd92a35448bb3b3f0c8bd5a4, type: 3}
+  m_Name: BlackPlayer
+  m_EditorClassIdentifier: 
+  playerName: Black
+  piecesColor: 1
+  forward:
+    column: 0
+    row: -1
+  forwardLeft:
+    column: -1
+    row: -1
+  forwardRight:
+    column: 1
+    row: -1
+  left:
+    column: -1
+    row: 0
+  right:
+    column: 1
+    row: 0
+  backward:
+    column: 0
+    row: 1
+  backwardLeft:
+    column: -1
+    row: 1
+  backwardRight:
+    column: 1
+    row: 1
