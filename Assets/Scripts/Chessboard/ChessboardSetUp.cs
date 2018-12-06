@@ -7,24 +7,39 @@ public class ChessboardSetUp : MonoBehaviour
     [SerializeField]
     private ChessboardPiecesLayout startingLayout;
     [SerializeField]
+    private ChessboardPiecesLayout unfinishedGameLayout;
+    [SerializeField]
     private ChessPiecesSet inactivePiecesSet;
     [SerializeField]
     private ChessPiecesSet activePiecesSet;
     [SerializeField]
     private Transform piecesContainer;
 
-    private void Start()
+    private void OnApplicationFocus(bool focus)
     {
-        SetUpStartingLayout();
-        gameManager.StartNewGame();
+        if (!focus) {
+            gameManager.SaveUnfinishedGameState();
+        }
     }
 
-    private void SetUpStartingLayout()
+    private void Start()
+    {
+        if (GameStateSerializer.LoadGameState() != null) {
+            gameManager.chessboardState.SetUnfinishedGameLayout();
+            SetUpChessboardLayout(unfinishedGameLayout);
+            gameManager.ContinueGame();
+        } else {
+            SetUpChessboardLayout(startingLayout);
+            gameManager.StartNewGame();
+        }
+    }
+
+    private void SetUpChessboardLayout(ChessboardPiecesLayout layout)
     {
         activePiecesSet.Clear();
-        for (int i = 0; i < startingLayout.columns.Length; i++) {
-            for (int j = 0; j < startingLayout.columns[i].row.Length; j++) {
-                GameObject chessPiece = FindInactiveChessPieceWithLabel(startingLayout.columns[i].row[j]);
+        for (int i = 0; i < layout.chessboardSquaresInfo.Length; i++) {
+            for (int j = 0; j < layout.chessboardSquaresInfo[i].row.Length; j++) {
+                GameObject chessPiece = FindInactiveChessPieceWithLabel(layout.chessboardSquaresInfo[i].row[j]);
                 if (chessPiece != null) {
                     activePiecesSet.Add(chessPiece);
                     chessPiece.transform.parent = piecesContainer;

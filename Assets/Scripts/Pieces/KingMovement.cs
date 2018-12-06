@@ -1,6 +1,8 @@
-﻿public class KingMovement : ChessPieceMovement
+﻿using System.Collections.Generic;
+
+public class KingMovement : ChessPieceMovement
 {
-    protected override void GetAvailablePositions()
+    public override List<ChessboardPosition> GetAvailablePositions()
     {
         availablePositions.Clear();
 
@@ -12,6 +14,8 @@
         GetAvailableKingPositionsInDirection(gameManager.currentPlayer.backwardRight);
         GetAvailableKingPositionsInDirection(gameManager.currentPlayer.left);
         GetAvailableKingPositionsInDirection(gameManager.currentPlayer.right);
+
+        return availablePositions;
     }
 
     private void GetAvailableKingPositionsInDirection(ChessboardPosition direction)

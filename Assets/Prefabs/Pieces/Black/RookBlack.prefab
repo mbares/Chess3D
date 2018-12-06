@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 65614897006588094}
   - component: {fileID: 114563664734914750}
   - component: {fileID: 114475400671339856}
+  - component: {fileID: 114412333228856264}
   m_Layer: 0
   m_Name: RookBlack
   m_TagString: Untagged
@@ -98,6 +99,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.895717, y: 1.3155541, z: 0.7757138}
   m_Center: {x: 0, y: 0.6577771, z: 0}
+--- !u!114 &114412333228856264
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1483647810092588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e8406ee11b0de24186d4244f6eb2efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chessPiece: {fileID: 114475400671339856}
+  chessPieceMovement: {fileID: 114563664734914750}
+  positionHighlightManager: {fileID: 11400000, guid: d65074cccdc52ab41a8634c9bedcb5b4,
+    type: 2}
+  gameManager: {fileID: 11400000, guid: 1badf658ee66784469eacbfb0c06b056, type: 2}
+  chessboardState: {fileID: 11400000, guid: 388f0123a1c5f6f46a37eaea2ff4afd8, type: 2}
+  chessMoveRecorder: {fileID: 11400000, guid: 5cc5dc039cbba464e97d109a976a0abe, type: 2}
+  dragFloatingHeight: 1
 --- !u!114 &114475400671339856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,7 +146,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessPiece: {fileID: 114475400671339856}
-  positionHighlightManager: {fileID: 11400000, guid: d65074cccdc52ab41a8634c9bedcb5b4,
-    type: 2}
   gameManager: {fileID: 11400000, guid: 1badf658ee66784469eacbfb0c06b056, type: 2}
-  dragFloatingHeight: 1
+  chessboardState: {fileID: 11400000, guid: 388f0123a1c5f6f46a37eaea2ff4afd8, type: 2}

@@ -2,7 +2,7 @@
 using UnityEditor;
 
 [CustomEditor(typeof(ChessboardPiecesLayout))]
-public class ChessboardLayoutCustomDrawer : Editor
+public class ChessboardLayoutCustomEditor : Editor
 {
     public override void OnInspectorGUI()
     {
@@ -67,7 +67,7 @@ public class ChessboardLayoutCustomDrawer : Editor
 
                 if (i >= 0 && j >= 0 && j < 8) {
                     EditorGUILayout.BeginHorizontal(rowStyle);
-                    chessboardPiecesLayout.columns[i].row[j] = (PieceLayoutLabel)EditorGUILayout.EnumPopup(chessboardPiecesLayout.columns[i].row[j], enumStyle);
+                    chessboardPiecesLayout.chessboardSquaresInfo[i].row[j] = (PieceLayoutLabel)EditorGUILayout.EnumPopup(chessboardPiecesLayout.chessboardSquaresInfo[i].row[j], enumStyle);
                     EditorGUILayout.EndHorizontal();
                 }
             }
