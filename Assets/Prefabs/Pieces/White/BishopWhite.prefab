@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 65476708000832124}
   - component: {fileID: 114343344682432314}
   - component: {fileID: 114668377085123116}
+  - component: {fileID: 114759557809878104}
   m_Layer: 0
   m_Name: BishopWhite
   m_TagString: Untagged
@@ -110,10 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessPiece: {fileID: 114668377085123116}
-  positionHighlightManager: {fileID: 11400000, guid: d65074cccdc52ab41a8634c9bedcb5b4,
-    type: 2}
   gameManager: {fileID: 11400000, guid: 1badf658ee66784469eacbfb0c06b056, type: 2}
-  dragFloatingHeight: 1
+  chessboardState: {fileID: 11400000, guid: 388f0123a1c5f6f46a37eaea2ff4afd8, type: 2}
 --- !u!114 &114668377085123116
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -130,3 +129,22 @@ MonoBehaviour:
     type: 3
     label: 4
   inactivePiecesSet: {fileID: 11400000, guid: 6c17f45597d31254b8f841c6a6643f99, type: 2}
+--- !u!114 &114759557809878104
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1887406437058666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e8406ee11b0de24186d4244f6eb2efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chessPiece: {fileID: 114668377085123116}
+  chessPieceMovement: {fileID: 114343344682432314}
+  positionHighlightManager: {fileID: 11400000, guid: d65074cccdc52ab41a8634c9bedcb5b4,
+    type: 2}
+  gameManager: {fileID: 11400000, guid: 1badf658ee66784469eacbfb0c06b056, type: 2}
+  chessboardState: {fileID: 11400000, guid: 388f0123a1c5f6f46a37eaea2ff4afd8, type: 2}
+  chessMoveRecorder: {fileID: 11400000, guid: 5cc5dc039cbba464e97d109a976a0abe, type: 2}
+  dragFloatingHeight: 1

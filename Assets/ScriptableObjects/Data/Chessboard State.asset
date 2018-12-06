@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Name: Chessboard State
   m_EditorClassIdentifier: 
   activePiecesSet: {fileID: 11400000, guid: 9fd51ee7ea7b51140bf25c6b0be1a514, type: 2}
+  unfinishedGameLayout: {fileID: 11400000, guid: 2b5bdc1bc0e4ed642ad40315cc5340fc,
+    type: 2}

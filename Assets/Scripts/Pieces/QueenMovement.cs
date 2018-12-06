@@ -1,8 +1,11 @@
-﻿public class QueenMovement : ChessPieceMovement
+﻿using System.Collections.Generic;
+
+public class QueenMovement : ChessPieceMovement
 {
-    protected override void GetAvailablePositions()
+    public override List<ChessboardPosition> GetAvailablePositions()
     {
         availablePositions.Clear();
+
         GetAvailablePositionsInDirection(gameManager.currentPlayer.forward);
         GetAvailablePositionsInDirection(gameManager.currentPlayer.backward);
         GetAvailablePositionsInDirection(gameManager.currentPlayer.left);
@@ -11,5 +14,7 @@
         GetAvailablePositionsInDirection(gameManager.currentPlayer.forwardRight);
         GetAvailablePositionsInDirection(gameManager.currentPlayer.backwardLeft);
         GetAvailablePositionsInDirection(gameManager.currentPlayer.backwardRight);
+
+        return availablePositions;
     }
 }

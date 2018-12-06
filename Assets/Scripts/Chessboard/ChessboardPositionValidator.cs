@@ -5,7 +5,7 @@
 
     public static bool IsPositionEmpty(ChessboardPosition chessboardPosition, ChessboardState chessboardState)
     {
-        return chessboardState.GetChessboardSquareInfo(chessboardPosition) == null;
+        return chessboardState.GetChessPieceInfoAtPosition(chessboardPosition) == null;
     }
 
     public static bool IsPositionInBounds(ChessboardPosition chessboardPosition)

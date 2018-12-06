@@ -1,11 +1,17 @@
-﻿public class KnightMovement : ChessPieceMovement
+﻿using System.Collections.Generic;
+
+public class KnightMovement : ChessPieceMovement
 {
-    protected override void GetAvailablePositions()
+    public override List<ChessboardPosition> GetAvailablePositions()
     {
+        availablePositions.Clear();
+
         GetAvailableKnightPositionsVertical(gameManager.currentPlayer.forward);
         GetAvailableKnightPositionsVertical(gameManager.currentPlayer.backward);
         GetAvailableKnightPositionsHorizontal(gameManager.currentPlayer.left);
         GetAvailableKnightPositionsHorizontal(gameManager.currentPlayer.right);
+
+        return availablePositions;
     }
 
     private void GetAvailableKnightPositionsVertical(ChessboardPosition direction)

@@ -1606,6 +1606,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 11400000, guid: 1badf658ee66784469eacbfb0c06b056, type: 2}
   startingLayout: {fileID: 11400000, guid: 97c5d70076cf1ca4390a358584753815, type: 2}
+  unfinishedGameLayout: {fileID: 11400000, guid: 2b5bdc1bc0e4ed642ad40315cc5340fc,
+    type: 2}
   inactivePiecesSet: {fileID: 11400000, guid: 6c17f45597d31254b8f841c6a6643f99, type: 2}
   activePiecesSet: {fileID: 11400000, guid: 9fd51ee7ea7b51140bf25c6b0be1a514, type: 2}
   piecesContainer: {fileID: 4752156559320716}
