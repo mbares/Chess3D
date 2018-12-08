@@ -34,7 +34,8 @@ public class MouseDrag : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (gameManager.currentPlayer.piecesColor == GetComponent<ChessPiece>().chessPieceInfo.color) {
+        if (gameManager.currentPlayer == GetComponent<ChessPiece>().controllingPlayer) {
+            //TODO optimize getting positions
             availablePositions = chessPieceMovement.GetAvailablePositions();
             distanceToCamera = Vector3.Distance(transform.position, Camera.main.transform.position);
             positionHighlightManager.ActivateCurrentPositionHighlight(transform.localPosition);
@@ -43,7 +44,7 @@ public class MouseDrag : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (gameManager.currentPlayer.piecesColor == GetComponent<ChessPiece>().chessPieceInfo.color) {
+        if (gameManager.currentPlayer == GetComponent<ChessPiece>().controllingPlayer) {
             DragChessPiece();
 
             positionUnderDraggedPiece = ChessboardPositionConverter.Vector3ToChessboardPosition(transform.localPosition);
@@ -91,20 +92,43 @@ public class MouseDrag : MonoBehaviour
         if (gameManager.currentPlayer.piecesColor == GetComponent<ChessPiece>().chessPieceInfo.color) {
             if (availablePositions.Contains(positionUnderDraggedPiece)) {
                 chessMoveRecorder.RecordMove(currentPosition, positionUnderDraggedPiece);
-                chessboardState.RemovePieceDataFromPosition(currentPosition);
-                chessboardState.AddPieceDataToPosition(chessPiece, positionUnderDraggedPiece);
 
+                if (ExistsCapturablePieceAtAvailablePosition()) {
+                    chessboardState.RemoveCapturedPieceAtPositionAndDeactivate(lastPositionUnderDraggedPiece);
+                }
+
+                UpdatePieceData();
                 availablePositions.Clear();
-                currentPosition = positionUnderDraggedPiece;
-                chessPieceMovement.SetCurrentPosition(currentPosition);
-                transform.localPosition = normalisedVector3PositionUnderDraggedPiece;
-                chessPieceMovement.SetHasMoved();
-                gameManager.NextTurn();
+                MovePiece();
+
+                gameManager.StartNextTurn();
             } else {
                 transform.localPosition = ChessboardPositionConverter.ChessboardPositionToVector3(currentPosition);
             }
 
             positionHighlightManager.DeactivateAllHighlights();
         }
+    }
+
+    private void UpdatePieceData()
+    {
+        chessboardState.RemovePieceDataFromPosition(currentPosition);
+        chessboardState.AddPieceDataToPosition(chessPiece, positionUnderDraggedPiece);
+    }
+
+    private void MovePiece()
+    {
+        currentPosition = positionUnderDraggedPiece;
+        chessPieceMovement.SetCurrentPosition(currentPosition);
+        transform.localPosition = normalisedVector3PositionUnderDraggedPiece;
+        chessPieceMovement.SetHasMoved();
+    }
+
+    private bool ExistsCapturablePieceAtAvailablePosition()
+    {
+        if (chessboardState.GetChessPieceAtPosition(positionUnderDraggedPiece) != null && chessPieceMovement.IsPieceAtPositionOpponent(positionUnderDraggedPiece)) {
+                return true;
+        }
+        return false;
     }
 }

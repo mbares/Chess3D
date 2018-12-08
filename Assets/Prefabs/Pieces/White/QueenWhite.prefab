@@ -147,4 +147,5 @@ MonoBehaviour:
     color: 0
     type: 4
     label: 5
+  controllingPlayer: {fileID: 11400000, guid: d585f835634621349a6c4b850e406dee, type: 2}
   inactivePiecesSet: {fileID: 11400000, guid: 6c17f45597d31254b8f841c6a6643f99, type: 2}

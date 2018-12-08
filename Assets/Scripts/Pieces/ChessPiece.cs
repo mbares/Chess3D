@@ -3,14 +3,25 @@
 public class ChessPiece : MonoBehaviour
 {
     public ChessPieceInfo chessPieceInfo;
+    public Player controllingPlayer;
 
     [SerializeField]
     private ChessPiecesSet inactivePiecesSet;
 
     private void Awake()
     {
+        Deactivate();
+    }
+
+    public void Deactivate()
+    {
         inactivePiecesSet.Add(gameObject);
         gameObject.SetActive(false);
+    }
+
+    public ChessboardPosition GetChessboardPosition()
+    {
+        return ChessboardPositionConverter.Vector3ToChessboardPosition(transform.localPosition);
     }
 }
 
@@ -34,6 +45,6 @@ public enum PieceColor
 
 public enum PieceLayoutLabel
 {
-    Empty, WPwn, WRk, WKn, WBsh, WQn, WKng,
-    BPwn, BRk, BKn, BBsh, BQn, BKng
+    Empty, WPwn, WRk, Wknt, WBsh, WQn, WKng,
+    BPwn, BRk, BKnt, BBsh, BQn, BKng
 }

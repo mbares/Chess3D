@@ -8,31 +8,44 @@ public class PawnMovement : ChessPieceMovement
 
         ChessboardPosition newPosition;
         if (!hasMovedOnce) {
-            newPosition = currentPosition + gameManager.currentPlayer.forward * 2;
+            newPosition = currentPosition + chessPiece.controllingPlayer.forward * 2;
             if (ChessboardPositionValidator.IsPositionEmpty(newPosition, gameManager.chessboardState)) {
                 availablePositions.Add(newPosition);
             }
         }
 
-        newPosition = currentPosition + gameManager.currentPlayer.forward;
+        newPosition = currentPosition + chessPiece.controllingPlayer.forward;
         if (ChessboardPositionValidator.IsPositionInBounds(newPosition) && ChessboardPositionValidator.IsPositionEmpty(newPosition, gameManager.chessboardState)) {
             availablePositions.Add(newPosition);
         }
 
-        newPosition = currentPosition + gameManager.currentPlayer.forwardLeft;
-        if (ChessboardPositionValidator.IsPositionInBounds(newPosition) && !ChessboardPositionValidator.IsPositionEmpty(newPosition, gameManager.chessboardState)) {
-            if (IsPieceAtPositionOpponent(newPosition)) {
-                availablePositions.Add(newPosition);
-            }
+        newPosition = currentPosition + chessPiece.controllingPlayer.forwardLeft;
+        if (ChessboardPositionValidator.IsPositionInBounds(newPosition) && IsPositionOccupiedWithOpponent(newPosition)) {
+            availablePositions.Add(newPosition);
         }
 
-        newPosition = currentPosition + gameManager.currentPlayer.forwardRight;
-        if (ChessboardPositionValidator.IsPositionInBounds(newPosition) && !ChessboardPositionValidator.IsPositionEmpty(newPosition, gameManager.chessboardState)) {
-            if (IsPieceAtPositionOpponent(newPosition)) {
-                availablePositions.Add(newPosition);
-            }
+        newPosition = currentPosition + chessPiece.controllingPlayer.forwardRight;
+        if (ChessboardPositionValidator.IsPositionInBounds(newPosition) && IsPositionOccupiedWithOpponent(newPosition)) {
+            availablePositions.Add(newPosition);
         }
 
-        return availablePositions;
+        return base.GetAvailablePositions();
+    }
+
+    public override List<ChessboardPosition> GetAvailableCapturePositions()
+    {
+        List<ChessboardPosition> capturePositions = new List<ChessboardPosition>();
+
+        ChessboardPosition newPosition = currentPosition + chessPiece.controllingPlayer.forwardLeft;
+        if (ChessboardPositionValidator.IsPositionInBounds(newPosition)) {
+            capturePositions.Add(newPosition);
+        }
+
+        newPosition = currentPosition + chessPiece.controllingPlayer.forwardRight;
+        if (ChessboardPositionValidator.IsPositionInBounds(newPosition)) {
+            capturePositions.Add(newPosition);
+        }
+
+        return capturePositions;
     }
 }

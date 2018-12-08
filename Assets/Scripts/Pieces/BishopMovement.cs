@@ -6,11 +6,23 @@ public class BishopMovement : ChessPieceMovement
     {
         availablePositions.Clear();
 
-        GetAvailablePositionsInDirection(gameManager.currentPlayer.forwardLeft);
-        GetAvailablePositionsInDirection(gameManager.currentPlayer.forwardRight);
-        GetAvailablePositionsInDirection(gameManager.currentPlayer.backwardLeft);
-        GetAvailablePositionsInDirection(gameManager.currentPlayer.backwardRight);
+        GetAvailablePositionsInDirection(chessPiece.controllingPlayer.forwardLeft);
+        GetAvailablePositionsInDirection(chessPiece.controllingPlayer.forwardRight);
+        GetAvailablePositionsInDirection(chessPiece.controllingPlayer.backwardLeft);
+        GetAvailablePositionsInDirection(chessPiece.controllingPlayer.backwardRight);
 
-        return availablePositions;
+        return base.GetAvailablePositions();
+    }
+
+    public override List<ChessboardPosition> GetAvailableCapturePositions()
+    {
+        capturablePositions.Clear();
+
+        GetCapturablePositionsInDirection(chessPiece.controllingPlayer.forwardLeft);
+        GetCapturablePositionsInDirection(chessPiece.controllingPlayer.forwardRight);
+        GetCapturablePositionsInDirection(chessPiece.controllingPlayer.backwardLeft);
+        GetCapturablePositionsInDirection(chessPiece.controllingPlayer.backwardRight);
+
+        return capturablePositions;
     }
 }

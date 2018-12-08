@@ -8,13 +8,30 @@ public class ChessboardState : ScriptableObject
     private const int NUM_OF_COLUMNS = 8;
     private const int NUM_OF_ROWS = 8;
 
+    public ChessPiecesSet activePiecesSet;
+
     [SerializeField]
-    private ChessPiecesSet activePiecesSet;
+    private CheckDetector checkDetector;
     [SerializeField]
     private ChessboardPiecesLayout unfinishedGameLayout;
 
     private GameState unfinishedGameState;
     private ChessPiece[,] piecesOnChessboardData = new ChessPiece[NUM_OF_COLUMNS, NUM_OF_ROWS];
+
+    public void SetUp()
+    {
+        checkDetector.SetKings(activePiecesSet.Items);
+    }
+
+    public bool DetectIfPlayerInCheck(Player player)
+    {
+        return checkDetector.DetectIfPlayerInCheck(player);
+    }
+
+    public ChessPiece GetPieceThatIsCausingCheck(Player checkedPlayer)
+    {
+        return checkDetector.GetPieceThatIsCausingCheck(activePiecesSet.Items, checkedPlayer);
+    }
 
     public ChessPieceInfo GetChessPieceInfoAtPosition(ChessboardPosition chessboardPosition)
     {
@@ -38,8 +55,9 @@ public class ChessboardState : ScriptableObject
 
         List<GameObject> activePieces = activePiecesSet.Items;
         for (int i = 0; i < activePieces.Count; i++) {
-            ChessboardPosition chessboardPosition = ChessboardPositionConverter.Vector3ToChessboardPosition(activePieces[i].transform.localPosition);
-            piecesOnChessboardData[chessboardPosition.column, chessboardPosition.row] = activePieces[i].GetComponent<ChessPiece>(); 
+            ChessPiece piece = activePieces[i].GetComponent<ChessPiece>();
+            ChessboardPosition chessboardPosition = piece.GetChessboardPosition();
+            piecesOnChessboardData[chessboardPosition.column, chessboardPosition.row] = piece;
         }
     }
 
@@ -50,12 +68,19 @@ public class ChessboardState : ScriptableObject
 
     public void RemovePieceDataFromPosition(ChessboardPosition chessboardPosition)
     {
-        piecesOnChessboardData[chessboardPosition.column, chessboardPosition.row] = null;        
+        piecesOnChessboardData[chessboardPosition.column, chessboardPosition.row] = null;
     }
 
     public void ClearPiecesOnChessboardData()
     {
         Array.Clear(piecesOnChessboardData, 0, piecesOnChessboardData.Length);
+    }
+
+    public void RemoveCapturedPieceAtPositionAndDeactivate(ChessboardPosition chessboardPosition)
+    {
+        ChessPiece capturedChessPiece = GetChessPieceAtPosition(chessboardPosition);
+        activePiecesSet.Remove(capturedChessPiece.gameObject);
+        capturedChessPiece.Deactivate();
     }
 
     public ChessboardSquaresInfo[] GetUnfinishedChessboardSquaresInfo()
@@ -69,8 +94,9 @@ public class ChessboardState : ScriptableObject
         }
 
         for (int i = 0; i < activePiecesSet.Items.Count; i++) {
-            ChessboardPosition chessboardPosition = ChessboardPositionConverter.Vector3ToChessboardPosition(activePiecesSet.Items[i].transform.localPosition);
-            PieceLayoutLabel label = activePiecesSet.Items[i].GetComponent<ChessPiece>().chessPieceInfo.label;
+            ChessPiece piece = activePiecesSet.Items[i].GetComponent<ChessPiece>();
+            ChessboardPosition chessboardPosition = piece.GetChessboardPosition();
+            PieceLayoutLabel label = piece.chessPieceInfo.label;
             chessboardSquaresInfo[chessboardPosition.column].row[chessboardPosition.row] = label;
         }
 
@@ -97,5 +123,19 @@ public class ChessboardState : ScriptableObject
     private void LoadUnfinishedGameState()
     {
         unfinishedGameState = GameStateSerializer.LoadGameState();
+    }
+
+    public void GetAllAvailableCapturePositionsOfPlayer(Player player)
+    {
+        player.availablePositionsSet.Clear();
+        for (int i = 0; i < activePiecesSet.Items.Count; ++i) {
+            ChessPiece piece = activePiecesSet.Items[i].GetComponent<ChessPiece>();
+            if (piece.controllingPlayer == player) {
+                List<ChessboardPosition> availablePositionsForPiece = piece.GetComponent<ChessPieceMovement>().GetAvailableCapturePositions();
+                for (int j = 0; j < availablePositionsForPiece.Count; ++j) {
+                    player.availablePositionsSet.Add(availablePositionsForPiece[j]);
+                }
+            }
+        }
     }
 }
