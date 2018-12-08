@@ -13,6 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerName: Black
   piecesColor: 1
+  availablePositionsSet: {fileID: 11400000, guid: 034ef3a3b45ff3a4681e6f65f84a66b1,
+    type: 2}
+  opponentAvailablePositionsSet: {fileID: 11400000, guid: 1688ac70a514df2439ccefedbde743fb,
+    type: 2}
   forward:
     column: 0
     row: -1
@@ -37,3 +41,4 @@ MonoBehaviour:
   backwardRight:
     column: 1
     row: 1
+  pieceThatIsCausingCheck: {fileID: 0}

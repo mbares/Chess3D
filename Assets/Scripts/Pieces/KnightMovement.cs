@@ -6,29 +6,61 @@ public class KnightMovement : ChessPieceMovement
     {
         availablePositions.Clear();
 
-        GetAvailableKnightPositionsVertical(gameManager.currentPlayer.forward);
-        GetAvailableKnightPositionsVertical(gameManager.currentPlayer.backward);
-        GetAvailableKnightPositionsHorizontal(gameManager.currentPlayer.left);
-        GetAvailableKnightPositionsHorizontal(gameManager.currentPlayer.right);
+        AddAvailablePositionIfValid(GetKnightPositionsVertical(chessPiece.controllingPlayer.forward));
+        AddAvailablePositionIfValid(GetKnightPositionsVertical(chessPiece.controllingPlayer.backward));
+        AddAvailablePositionIfValid(GetKnightPositionsHorizontal(chessPiece.controllingPlayer.left));
+        AddAvailablePositionIfValid(GetKnightPositionsHorizontal(chessPiece.controllingPlayer.right));
 
-        return availablePositions;
+        return base.GetAvailablePositions();
     }
 
-    private void GetAvailableKnightPositionsVertical(ChessboardPosition direction)
+    public override List<ChessboardPosition> GetAvailableCapturePositions()
     {
-        ChessboardPosition newPosition1 = currentPosition + direction * 2 + gameManager.currentPlayer.left;
-        ChessboardPosition newPosition2 = currentPosition + direction * 2 + gameManager.currentPlayer.right;
+        capturablePositions.Clear();
 
-        AddAvailablePositionIfValid(newPosition1);
-        AddAvailablePositionIfValid(newPosition2);
+        AddCapturablePositionIfValid(GetKnightPositionsVertical(chessPiece.controllingPlayer.forward));
+        AddCapturablePositionIfValid(GetKnightPositionsVertical(chessPiece.controllingPlayer.backward));
+        AddCapturablePositionIfValid(GetKnightPositionsHorizontal(chessPiece.controllingPlayer.left));
+        AddCapturablePositionIfValid(GetKnightPositionsHorizontal(chessPiece.controllingPlayer.right));
+
+        return capturablePositions;
     }
 
-    private void GetAvailableKnightPositionsHorizontal(ChessboardPosition direction)
+    private ChessboardPosition[] GetKnightPositionsVertical(ChessboardPosition direction)
     {
-        ChessboardPosition newPosition1 = currentPosition + direction * 2 + gameManager.currentPlayer.forward;
-        ChessboardPosition newPosition2 = currentPosition + direction * 2 + gameManager.currentPlayer.backward;
+        ChessboardPosition[] positions = {
+            currentPosition + direction * 2 + chessPiece.controllingPlayer.left,
+            currentPosition + direction * 2 + chessPiece.controllingPlayer.right
+        };
 
-        AddAvailablePositionIfValid(newPosition1);
-        AddAvailablePositionIfValid(newPosition2);
+        return positions;
+    }
+
+    private ChessboardPosition[] GetKnightPositionsHorizontal(ChessboardPosition direction)
+    {
+        ChessboardPosition[] positions = {
+            currentPosition + direction * 2 + chessPiece.controllingPlayer.forward,
+            currentPosition + direction * 2 + chessPiece.controllingPlayer.backward
+        };
+
+        return positions;
+    }
+
+    private void AddAvailablePositionIfValid(ChessboardPosition[] positions)
+    {
+        for (int i = 0; i < positions.Length; ++i) {
+            if (IsPositionValid(positions[i])) {
+                availablePositions.Add(positions[i]);
+            }
+        }
+    }
+
+    private void AddCapturablePositionIfValid(ChessboardPosition[] positions)
+    {
+        for (int i = 0; i < positions.Length; ++i) {
+            if (ChessboardPositionValidator.IsPositionInBounds(positions[i])) {
+                availablePositions.Add(positions[i]);
+            }
+        }
     }
 }

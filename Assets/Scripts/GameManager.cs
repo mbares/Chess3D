@@ -15,6 +15,7 @@ public class GameManager : ScriptableObject
 
     public void StartNewGame()
     {
+        chessboardState.SetUp();
         chessMoveRecorder.ClearMoves();
         currentPlayer = whitePlayer;
         chessboardState.UpdatePiecesOnChessboardData();
@@ -22,13 +23,29 @@ public class GameManager : ScriptableObject
 
     public void ContinueGame()
     {
+        chessboardState.SetUp();
         chessMoveRecorder.ClearMoves();
         currentPlayer = chessboardState.GetUnfinishedGameCurrentPlayerColor() == PieceColor.White ? whitePlayer : blackPlayer;
     }
 
-    public void NextTurn()
+    public void StartNextTurn()
     {
+        chessboardState.GetAllAvailableCapturePositionsOfPlayer(currentPlayer);
         currentPlayer = currentPlayer == whitePlayer ? blackPlayer : whitePlayer;
+        currentPlayer.SetIsInCheck(chessboardState.DetectIfPlayerInCheck(currentPlayer));
+        if(currentPlayer.IsInCheck()) {
+            currentPlayer.pieceCausingCheck = chessboardState.GetPieceThatIsCausingCheck(currentPlayer);
+        }
+    }
+
+    public void GetAllAvailableCapturePositionsOfWhitePlayer()
+    {
+        chessboardState.GetAllAvailableCapturePositionsOfPlayer(whitePlayer);
+    }
+
+    public void GetAllAvailableCapturePositionsOfBlackPlayer()
+    {
+        chessboardState.GetAllAvailableCapturePositionsOfPlayer(blackPlayer);
     }
 
     public void SaveUnfinishedGameState()

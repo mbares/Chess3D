@@ -24,13 +24,23 @@ public class ChessboardSetUp : MonoBehaviour
 
     private void Start()
     {
+        StartNewGame();
+    }
+
+    private void StartNewGame()
+    {
+        SetUpChessboardLayout(startingLayout);
+        gameManager.StartNewGame();
+    }
+
+    private void ContinueLastGame()
+    {
         if (GameStateSerializer.LoadGameState() != null) {
             gameManager.chessboardState.SetUnfinishedGameLayout();
             SetUpChessboardLayout(unfinishedGameLayout);
             gameManager.ContinueGame();
         } else {
-            SetUpChessboardLayout(startingLayout);
-            gameManager.StartNewGame();
+            StartNewGame();
         }
     }
 

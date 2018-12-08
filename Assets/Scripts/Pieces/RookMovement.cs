@@ -6,11 +6,23 @@ public class RookMovement : ChessPieceMovement
     {
         availablePositions.Clear();
 
-        GetAvailablePositionsInDirection(gameManager.currentPlayer.forward);
-        GetAvailablePositionsInDirection(gameManager.currentPlayer.backward);
-        GetAvailablePositionsInDirection(gameManager.currentPlayer.left);
-        GetAvailablePositionsInDirection(gameManager.currentPlayer.right);
+        GetAvailablePositionsInDirection(chessPiece.controllingPlayer.forward);
+        GetAvailablePositionsInDirection(chessPiece.controllingPlayer.backward);
+        GetAvailablePositionsInDirection(chessPiece.controllingPlayer.left);
+        GetAvailablePositionsInDirection(chessPiece.controllingPlayer.right);
 
-        return availablePositions;
+        return base.GetAvailablePositions();
+    }
+
+    public override List<ChessboardPosition> GetAvailableCapturePositions()
+    {
+        capturablePositions.Clear();
+
+        GetCapturablePositionsInDirection(chessPiece.controllingPlayer.forward);
+        GetCapturablePositionsInDirection(chessPiece.controllingPlayer.backward);
+        GetCapturablePositionsInDirection(chessPiece.controllingPlayer.left);
+        GetCapturablePositionsInDirection(chessPiece.controllingPlayer.right);
+
+        return capturablePositions;
     }
 }

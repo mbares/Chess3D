@@ -6,15 +6,31 @@ public class QueenMovement : ChessPieceMovement
     {
         availablePositions.Clear();
 
-        GetAvailablePositionsInDirection(gameManager.currentPlayer.forward);
-        GetAvailablePositionsInDirection(gameManager.currentPlayer.backward);
-        GetAvailablePositionsInDirection(gameManager.currentPlayer.left);
-        GetAvailablePositionsInDirection(gameManager.currentPlayer.right);
-        GetAvailablePositionsInDirection(gameManager.currentPlayer.forwardLeft);
-        GetAvailablePositionsInDirection(gameManager.currentPlayer.forwardRight);
-        GetAvailablePositionsInDirection(gameManager.currentPlayer.backwardLeft);
-        GetAvailablePositionsInDirection(gameManager.currentPlayer.backwardRight);
+        GetAvailablePositionsInDirection(chessPiece.controllingPlayer.forward);
+        GetAvailablePositionsInDirection(chessPiece.controllingPlayer.backward);
+        GetAvailablePositionsInDirection(chessPiece.controllingPlayer.left);
+        GetAvailablePositionsInDirection(chessPiece.controllingPlayer.right);
+        GetAvailablePositionsInDirection(chessPiece.controllingPlayer.forwardLeft);
+        GetAvailablePositionsInDirection(chessPiece.controllingPlayer.forwardRight);
+        GetAvailablePositionsInDirection(chessPiece.controllingPlayer.backwardLeft);
+        GetAvailablePositionsInDirection(chessPiece.controllingPlayer.backwardRight);
 
-        return availablePositions;
+        return base.GetAvailablePositions();
+    }
+
+    public override List<ChessboardPosition> GetAvailableCapturePositions()
+    {
+        capturablePositions.Clear();
+
+        GetCapturablePositionsInDirection(chessPiece.controllingPlayer.forward);
+        GetCapturablePositionsInDirection(chessPiece.controllingPlayer.backward);
+        GetCapturablePositionsInDirection(chessPiece.controllingPlayer.left);
+        GetCapturablePositionsInDirection(chessPiece.controllingPlayer.right);
+        GetCapturablePositionsInDirection(chessPiece.controllingPlayer.forwardLeft);
+        GetCapturablePositionsInDirection(chessPiece.controllingPlayer.forwardRight);
+        GetCapturablePositionsInDirection(chessPiece.controllingPlayer.backwardLeft);
+        GetCapturablePositionsInDirection(chessPiece.controllingPlayer.backwardRight);
+
+        return capturablePositions;
     }
 }
