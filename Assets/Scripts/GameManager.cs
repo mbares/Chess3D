@@ -18,6 +18,8 @@ public class GameManager : ScriptableObject
     private GameEvent continuedGameStartedEvent;
     [SerializeField]
     private GameEvent newTurnEvent;
+    [SerializeField]
+    private EndOfGameDetector endOfGameDetector;
 
     public void StartNewGame()
     {
@@ -36,11 +38,30 @@ public class GameManager : ScriptableObject
         continuedGameStartedEvent.Raise();
     }
 
+    public void SetPlayerPieces()
+    {
+        chessboardState.UpdatePlayerPiecesSet(whitePlayer);
+        chessboardState.UpdatePlayerPiecesSet(blackPlayer);
+    }
+
     public void StartNextTurn()
     {
         chessboardState.GetAllAvailableCapturePositionsOfPlayer(currentPlayer);
         currentPlayer = currentPlayer == whitePlayer ? blackPlayer : whitePlayer;
-        newTurnEvent.Raise();
+
+        if (!endOfGameDetector.CheckForEndOfGame(currentPlayer)) {
+            currentPlayer.SetIsInCheck(false);
+            newTurnEvent.Raise();
+        }
+    }
+
+    public void SetOtherPlayerInCheck(Player currentPlayer)
+    {
+        if (currentPlayer == whitePlayer) {
+            blackPlayer.SetIsInCheck(true);
+        } else {
+            whitePlayer.SetIsInCheck(true);
+        }
     }
 
     public void GetAllAvailableCapturePositionsOfWhitePlayer()
@@ -55,12 +76,14 @@ public class GameManager : ScriptableObject
 
     public void SaveUnfinishedGameState()
     {
-        GameState unfinishedGameState = new GameState {
-            currentPlayerColor = currentPlayer.piecesColor,
-            chessboardSquaresInfo = chessboardState.GetUnfinishedChessboardSquaresInfo()
-        };
+        if (chessMoveRecorder.playerMoves.moves.Count > 0) {
+            GameState unfinishedGameState = new GameState {
+                currentPlayerColor = currentPlayer.piecesColor,
+                chessboardSquaresInfo = chessboardState.GetUnfinishedChessboardSquaresInfo()
+            };
 
-        GameStateSerializer.SaveGameState(unfinishedGameState);
+            GameStateSerializer.SaveGameState(unfinishedGameState);
+        }
     }
 
     public void SaveUnfinishedGameMoves()

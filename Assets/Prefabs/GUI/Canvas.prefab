@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 224373716718980954}
   - component: {fileID: 222488408684903208}
   - component: {fileID: 114356481650176404}
+  - component: {fileID: 114340780308697334}
   m_Layer: 0
   m_Name: EndGamePanel
   m_TagString: Untagged
@@ -72,6 +73,7 @@ GameObject:
   - component: {fileID: 224061689705856194}
   - component: {fileID: 114509469484799224}
   - component: {fileID: 114369223902430830}
+  - component: {fileID: 114858419022561082}
   m_Layer: 0
   m_Name: ReplayItems
   m_TagString: Untagged
@@ -541,6 +543,7 @@ GameObject:
   - component: {fileID: 223678704543011208}
   - component: {fileID: 114430375792491552}
   - component: {fileID: 114893959507488892}
+  - component: {fileID: 114909977784619322}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -1315,7 +1318,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114673212809916656}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114340780308697334}
+        m_MethodName: HideEndGamePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114268154113316896
@@ -1520,6 +1534,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114340780308697334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1037569355651326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13937a2952cb4fa4cba06b749b941886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chessMoveRecorder: {fileID: 11400000, guid: 5cc5dc039cbba464e97d109a976a0abe, type: 2}
+  winLabel: {fileID: 114651768065137586}
+  saveReplayButton: {fileID: 114741158459995350}
 --- !u!114 &114356481650176404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2713,6 +2741,20 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: BLACK
+--- !u!114 &114858419022561082
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1153483884311660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4fef043f6f311841aea56df6ad5a0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  replayManager: {fileID: 11400000, guid: 981bb05410e23fe409d3b1ee89927610, type: 2}
+  replayPrefab: {fileID: 1009970234619816, guid: c20af2d0c31bd994f915c2e37c868a40,
+    type: 2}
 --- !u!114 &114882858651200134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2796,6 +2838,69 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114909977784619322
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1740772522393076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b750ecdb437f61d41be96f2b09e97804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventResponsePairs:
+  - gameEvent: {fileID: 11400000, guid: 9626c44255b9b5b45a0fda5e509671d8, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114340780308697334}
+          m_MethodName: ShowEndGamePanel
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: BlackWins
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - gameEvent: {fileID: 11400000, guid: 762b46baf715fd2468d73ce8cccf5579, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114340780308697334}
+          m_MethodName: ShowEndGamePanel
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: WhiteWins
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - gameEvent: {fileID: 11400000, guid: 22e9334a29273b54c98869e3ea588419, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114340780308697334}
+          m_MethodName: ShowEndGamePanel
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Draw
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
 --- !u!114 &114910694334013164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2834,7 +2939,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114396509146320662}
   m_HandleRect: {fileID: 224365608769106776}
   m_Direction: 3
-  m_Value: 1
+  m_Value: 0
   m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3389,7 +3494,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -27.775024, y: 0}
-  m_SizeDelta: {x: -55.55, y: -707.682}
+  m_SizeDelta: {x: -55.55, y: -708.5593}
   m_Pivot: {x: 0.5, y: 1.0000001}
 --- !u!224 &224062014673610378
 RectTransform:
@@ -3520,7 +3625,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000045776367, y: -0.000030517578}
+  m_AnchoredPosition: {x: -0.000045776367, y: 0}
   m_SizeDelta: {x: 216.1, y: 0}
   m_Pivot: {x: 0.49999994, y: 0.9999999}
 --- !u!224 &224219250639134138

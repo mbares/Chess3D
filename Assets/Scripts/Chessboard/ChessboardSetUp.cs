@@ -19,7 +19,8 @@ public class ChessboardSetUp : MonoBehaviour
     {
         gameManager.SaveUnfinishedGameState();
         gameManager.SaveUnfinishedGameMoves();
-
+        activePiecesSet.Clear();
+        inactivePiecesSet.Clear();
     }
 
     private void Start()
@@ -41,6 +42,7 @@ public class ChessboardSetUp : MonoBehaviour
 
     private void SetUpChessboardLayout(ChessboardPiecesLayout layout)
     {
+        DeactivateAllActivePieces();
         activePiecesSet.Clear();
         for (int i = 0; i < layout.chessboardSquaresInfo.Length; i++) {
             for (int j = 0; j < layout.chessboardSquaresInfo[i].row.Length; j++) {
@@ -48,10 +50,18 @@ public class ChessboardSetUp : MonoBehaviour
                 if (chessPiece != null) {
                     activePiecesSet.Add(chessPiece);
                     chessPiece.transform.parent = piecesContainer;
-                    chessPiece.transform.localPosition = ChessboardPositionConverter.ChessboardPositionToVector3(new ChessboardPosition(i, j));
+                    chessPiece.GetComponent<ChessPieceMovement>().Move(new ChessboardPosition(i, j));
                     chessPiece.SetActive(true);
                 }
             }
+        }
+        gameManager.SetPlayerPieces();
+    }
+
+    private void DeactivateAllActivePieces()
+    {
+        for (int i = 0; i < activePiecesSet.Items.Count; ++i) {
+            activePiecesSet.Items[i].GetComponent<ChessPiece>().Deactivate();
         }
     }
 
@@ -61,7 +71,7 @@ public class ChessboardSetUp : MonoBehaviour
             if (inactivePiecesSet.Items[i].GetComponent<ChessPiece>().chessPieceInfo.label == label) {
                 GameObject chessPiece = inactivePiecesSet.Items[i];
                 inactivePiecesSet.Remove(inactivePiecesSet.Items[i]);
-                
+
                 return chessPiece;
             }
         }

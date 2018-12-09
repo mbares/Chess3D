@@ -21,3 +21,4 @@ MonoBehaviour:
   continuedGameStartedEvent: {fileID: 11400000, guid: fd4836a38dc74c04b8db58edb03c2ab3,
     type: 2}
   newTurnEvent: {fileID: 11400000, guid: 83c7a58da99bf5f46b51598337f02493, type: 2}
+  endOfGameDetector: {fileID: 11400000, guid: e4423958725f1ee44a8875c433c1e2ee, type: 2}

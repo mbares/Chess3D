@@ -13,12 +13,16 @@ public class ChessMoveRecorder : ScriptableObject
 
     public void SavePlayerMovesForReplay()
     {
-        PlayerMovesSerializer.SavePlayerMovesForReplay(playerMoves);
+        if (playerMoves.moves.Count > 0) {
+            PlayerMovesSerializer.SavePlayerMovesForReplay(playerMoves);
+        }
     }
 
     public void SavePlayerMovesForContinue()
     {
-        PlayerMovesSerializer.SavePlayerMovesForContinue(playerMoves);
+        if (playerMoves.moves.Count > 0) {
+            PlayerMovesSerializer.SavePlayerMovesForContinue(playerMoves);
+        }
     }
 
     public void ClearMoves()

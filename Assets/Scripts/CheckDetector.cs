@@ -25,13 +25,11 @@ public class CheckDetector : ScriptableObject
     public bool IsMoveCausingCheck(ChessPiece movedPiece)
     {
         if (movedPiece.chessPieceInfo.color == PieceColor.White) {
-            if (movedPiece.GetComponent<ChessPieceMovement>().GetAvailableCapturePositions().Contains(whiteKing.simulatedPosition)) {
-                Debug.Log("White in check");
+            if (movedPiece.GetComponent<ChessPieceMovement>().GetAvailableCapturePositions().Contains(blackKing.simulatedPosition)) {
                 return true;
             }
         } else if (movedPiece.chessPieceInfo.color == PieceColor.Black) {
-            if (movedPiece.GetComponent<ChessPieceMovement>().GetAvailableCapturePositions().Contains(blackKing.simulatedPosition)) {
-                Debug.Log("Black in check");
+            if (movedPiece.GetComponent<ChessPieceMovement>().GetAvailableCapturePositions().Contains(whiteKing.simulatedPosition)) {
                 return true;
             }
         }
@@ -43,12 +41,10 @@ public class CheckDetector : ScriptableObject
     {
         if (player.piecesColor == PieceColor.White) {
             if (player.opponentAvailablePositionsSet.Items.Contains(whiteKing.simulatedPosition)) {
-                Debug.Log("White in check");
                 return true;
             }
         } else if (player.piecesColor == PieceColor.Black) {
             if (player.opponentAvailablePositionsSet.Items.Contains(blackKing.simulatedPosition)) {
-                Debug.Log("Black in check");
                 return true;
             }
         }
