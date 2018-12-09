@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "System/GameManager")]
 public class GameManager : ScriptableObject
 {
-    public ChessboardState chessboardState;
+    public ChessboardStateManager chessboardState;
     public Player currentPlayer;
 
     [SerializeField]
@@ -12,6 +12,12 @@ public class GameManager : ScriptableObject
     private Player whitePlayer;
     [SerializeField]
     private ChessMoveRecorder chessMoveRecorder;
+    [SerializeField]
+    private GameEvent newGameStartedEvent;
+    [SerializeField]
+    private GameEvent continuedGameStartedEvent;
+    [SerializeField]
+    private GameEvent newTurnEvent;
 
     public void StartNewGame()
     {
@@ -19,6 +25,7 @@ public class GameManager : ScriptableObject
         chessMoveRecorder.ClearMoves();
         currentPlayer = whitePlayer;
         chessboardState.UpdatePiecesOnChessboardData();
+        newGameStartedEvent.Raise();
     }
 
     public void ContinueGame()
@@ -26,16 +33,14 @@ public class GameManager : ScriptableObject
         chessboardState.SetUp();
         chessMoveRecorder.ClearMoves();
         currentPlayer = chessboardState.GetUnfinishedGameCurrentPlayerColor() == PieceColor.White ? whitePlayer : blackPlayer;
+        continuedGameStartedEvent.Raise();
     }
 
     public void StartNextTurn()
     {
         chessboardState.GetAllAvailableCapturePositionsOfPlayer(currentPlayer);
         currentPlayer = currentPlayer == whitePlayer ? blackPlayer : whitePlayer;
-        currentPlayer.SetIsInCheck(chessboardState.DetectIfPlayerInCheck(currentPlayer));
-        if(currentPlayer.IsInCheck()) {
-            currentPlayer.pieceCausingCheck = chessboardState.GetPieceThatIsCausingCheck(currentPlayer);
-        }
+        newTurnEvent.Raise();
     }
 
     public void GetAllAvailableCapturePositionsOfWhitePlayer()
@@ -56,5 +61,10 @@ public class GameManager : ScriptableObject
         };
 
         GameStateSerializer.SaveGameState(unfinishedGameState);
+    }
+
+    public void SaveUnfinishedGameMoves()
+    {
+        chessMoveRecorder.SavePlayerMovesForContinue();
     }
 }

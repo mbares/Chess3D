@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Data/Player")]
 public class Player : ScriptableObject
 {
     public string playerName;
@@ -15,9 +15,6 @@ public class Player : ScriptableObject
     public ChessboardPosition backward;
     public ChessboardPosition backwardLeft;
     public ChessboardPosition backwardRight;
-
-    [HideInInspector]
-    public ChessPiece pieceCausingCheck;
 
     private bool inCheck = false;
 

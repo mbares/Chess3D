@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "System/CheckDetector")]
 public class CheckDetector : ScriptableObject
 {
     private ChessPieceMovement whiteKing;
@@ -10,9 +10,9 @@ public class CheckDetector : ScriptableObject
     public void SetKings(List<GameObject> activePieces)
     {
         for (int i = 0; i < activePieces.Count; ++i) {
-            if (activePieces[i].GetComponent<ChessPiece>().chessPieceInfo.label == PieceLayoutLabel.WKng) {
+            if (activePieces[i].GetComponent<ChessPiece>().chessPieceInfo.label == PieceLabel.WK) {
                 whiteKing = activePieces[i].GetComponent<ChessPieceMovement>();
-            } else if (activePieces[i].GetComponent<ChessPiece>().chessPieceInfo.label == PieceLayoutLabel.BKng) {
+            } else if (activePieces[i].GetComponent<ChessPiece>().chessPieceInfo.label == PieceLabel.BK) {
                 blackKing = activePieces[i].GetComponent<ChessPieceMovement>();
             }
 
@@ -22,7 +22,24 @@ public class CheckDetector : ScriptableObject
         }
     }
 
-    public bool DetectIfPlayerInCheck(Player player)
+    public bool IsMoveCausingCheck(ChessPiece movedPiece)
+    {
+        if (movedPiece.chessPieceInfo.color == PieceColor.White) {
+            if (movedPiece.GetComponent<ChessPieceMovement>().GetAvailableCapturePositions().Contains(whiteKing.simulatedPosition)) {
+                Debug.Log("White in check");
+                return true;
+            }
+        } else if (movedPiece.chessPieceInfo.color == PieceColor.Black) {
+            if (movedPiece.GetComponent<ChessPieceMovement>().GetAvailableCapturePositions().Contains(blackKing.simulatedPosition)) {
+                Debug.Log("Black in check");
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public bool IsPlayerInCheck(Player player)
     {
         if (player.piecesColor == PieceColor.White) {
             if (player.opponentAvailablePositionsSet.Items.Contains(whiteKing.simulatedPosition)) {

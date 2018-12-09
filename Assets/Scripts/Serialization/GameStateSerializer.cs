@@ -55,7 +55,7 @@ public class GameStateSerializer : MonoBehaviour
         int counter = 0;
         for (int i = 0; i < gameState.chessboardSquaresInfo.Length; ++i) {
             for (int j = 0; j < gameState.chessboardSquaresInfo[i].row.Length; ++j) {
-                gameState.chessboardSquaresInfo[i].row[j] = (PieceLayoutLabel)Enum.Parse(typeof(PieceLayoutLabel), squareInfo[counter]);
+                gameState.chessboardSquaresInfo[i].row[j] = (PieceLabel)Enum.Parse(typeof(PieceLabel), squareInfo[counter]);
                 counter++;
             }
         }

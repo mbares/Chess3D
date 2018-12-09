@@ -12,9 +12,11 @@ public class MouseDrag : MonoBehaviour
     [SerializeField]
     protected GameManager gameManager;
     [SerializeField]
-    protected ChessboardState chessboardState;
+    protected ChessboardStateManager chessboardState;
     [SerializeField]
     protected ChessMoveRecorder chessMoveRecorder;
+    [SerializeField]
+    protected CheckDetector checkDetector;
     [SerializeField]
     private float dragFloatingHeight = 1;
 
@@ -35,7 +37,6 @@ public class MouseDrag : MonoBehaviour
     private void OnMouseDown()
     {
         if (gameManager.currentPlayer == GetComponent<ChessPiece>().controllingPlayer) {
-            //TODO optimize getting positions
             availablePositions = chessPieceMovement.GetAvailablePositions();
             distanceToCamera = Vector3.Distance(transform.position, Camera.main.transform.position);
             positionHighlightManager.ActivateCurrentPositionHighlight(transform.localPosition);
@@ -91,10 +92,17 @@ public class MouseDrag : MonoBehaviour
     {
         if (gameManager.currentPlayer.piecesColor == GetComponent<ChessPiece>().chessPieceInfo.color) {
             if (availablePositions.Contains(positionUnderDraggedPiece)) {
-                chessMoveRecorder.RecordMove(currentPosition, positionUnderDraggedPiece);
-
+                ChessPiece capturedPiece = null;
                 if (ExistsCapturablePieceAtAvailablePosition()) {
-                    chessboardState.RemoveCapturedPieceAtPositionAndDeactivate(lastPositionUnderDraggedPiece);
+                    capturedPiece = chessboardState.GetChessPieceAtPosition(positionUnderDraggedPiece);
+                    chessboardState.RemoveCapturedPieceAtPositionAndDeactivate(positionUnderDraggedPiece);
+                }
+                 
+                if (checkDetector.IsMoveCausingCheck(chessPiece)) {
+                    chessPiece.controllingPlayer.SetIsInCheck(true);
+                    chessMoveRecorder.RecordCheck(chessPiece, currentPosition, positionUnderDraggedPiece, capturedPiece);
+                } else {
+                    chessMoveRecorder.RecordNormalMove(chessPiece, currentPosition, positionUnderDraggedPiece, capturedPiece);
                 }
 
                 UpdatePieceData();

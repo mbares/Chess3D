@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "System/PositionHighlightManager")]
 public class PositionHighlightManager : ScriptableObject
 {
     [SerializeField]

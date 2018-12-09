@@ -11,7 +11,7 @@ public abstract class ChessPieceMovement : MonoBehaviour
     [SerializeField]
     protected GameManager gameManager;
     [SerializeField]
-    protected ChessboardState chessboardState;
+    protected ChessboardStateManager chessboardState;
 
     protected List<ChessboardPosition> availablePositions = new List<ChessboardPosition>();
     protected List<ChessboardPosition> capturablePositions = new List<ChessboardPosition>();
@@ -131,7 +131,7 @@ public abstract class ChessPieceMovement : MonoBehaviour
             gameManager.GetAllAvailableCapturePositionsOfWhitePlayer();
         }
 
-        bool isInCheck = chessboardState.DetectIfPlayerInCheck(chessPiece.controllingPlayer);
+        bool isInCheck = chessboardState.IsPlayerInCheck(chessPiece.controllingPlayer);
 
         chessboardState.RemovePieceDataFromPosition(position);
 

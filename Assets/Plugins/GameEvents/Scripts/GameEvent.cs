@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -10,7 +9,7 @@ public class GameEvent : ScriptableObject
     public void Raise()
     {
         for (int i = listeners.Count - 1; i >= 0; i--) {
-            listeners[i].OnEventRaised();
+            listeners[i].OnEventRaised(this);
         }
     }
 

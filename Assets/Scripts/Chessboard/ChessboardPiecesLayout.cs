@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Data/ChessboardLayout")]
 public class ChessboardPiecesLayout : ScriptableObject
 {
     private const int NUM_OF_COLUMNS = 8;
@@ -13,12 +13,12 @@ public class ChessboardSquaresInfo
 {
     private const int NUM_OF_ROWS = 8;
 
-    public PieceLayoutLabel[] row = new PieceLayoutLabel[NUM_OF_ROWS];
+    public PieceLabel[] row = new PieceLabel[NUM_OF_ROWS];
 
     public ChessboardSquaresInfo ()
     {
         for (int i = 0; i < row.Length; i++) {
-            row[i] = PieceLayoutLabel.Empty;
+            row[i] = PieceLabel.Empty;
         }
     }
 }
