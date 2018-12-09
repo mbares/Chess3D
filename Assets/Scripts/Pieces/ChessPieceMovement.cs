@@ -7,6 +7,8 @@ public abstract class ChessPieceMovement : MonoBehaviour
     public ChessboardPosition simulatedPosition;
     [HideInInspector]
     public ChessboardPosition currentPosition;
+    [HideInInspector]
+    public bool hasMoved;
 
     [SerializeField]
     protected ChessPiece chessPiece;
@@ -17,15 +19,13 @@ public abstract class ChessPieceMovement : MonoBehaviour
 
     protected List<ChessboardPosition> availablePositions = new List<ChessboardPosition>();
     protected List<ChessboardPosition> capturablePositions = new List<ChessboardPosition>();
-   
-    protected bool hasMovedOnce;
-
+ 
     public abstract List<ChessboardPosition> GetAvailableCapturePositions();
 
     public virtual List<ChessboardPosition> GetAvailablePositions()
     {
         for (int i = availablePositions.Count - 1; i >= 0; --i) {
-            if (WillPositionCauseOwnCheck(availablePositions[i])) {
+            if (IsPositionCausingOwnCheck(availablePositions[i])) {
                 availablePositions.RemoveAt(i);
             }
         }
@@ -35,18 +35,13 @@ public abstract class ChessPieceMovement : MonoBehaviour
 
     private void OnDisable()
     {
-        hasMovedOnce = false;
+        hasMoved = false;
     }
 
     protected virtual void OnEnable()
     {
         currentPosition = ChessboardPositionConverter.Vector3ToChessboardPosition(transform.localPosition);
         simulatedPosition = currentPosition;
-    }
-
-    public void SetHasMovedOnce()
-    {
-        hasMovedOnce = true;
     }
 
     public bool IsPieceAtPositionOpponent(ChessboardPosition chessboardPosition)
@@ -110,7 +105,7 @@ public abstract class ChessPieceMovement : MonoBehaviour
         return false;
     }
 
-    private bool WillPositionCauseOwnCheck(ChessboardPosition position)
+    protected bool IsPositionCausingOwnCheck(ChessboardPosition position)
     {
         simulatedPosition = position;
 
@@ -146,7 +141,7 @@ public abstract class ChessPieceMovement : MonoBehaviour
         return isInCheck;
     }
 
-    public void Move(ChessboardPosition position)
+    public virtual void Move(ChessboardPosition position)
     {
         transform.localPosition = ChessboardPositionConverter.ChessboardPositionToVector3(position);
         currentPosition = position;

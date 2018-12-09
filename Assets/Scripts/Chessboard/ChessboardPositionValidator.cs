@@ -1,7 +1,7 @@
 ﻿public static class ChessboardPositionValidator
 {
-    private const int MIN_POSITION = 0;
-    private const int MAX_POSITION = 7;
+    public const int MIN_POSITION = 0;
+    public const int MAX_POSITION = 7;
 
     public static bool IsPositionEmpty(ChessboardPosition chessboardPosition, ChessboardStateManager chessboardState)
     {

@@ -13,10 +13,18 @@ public class ChessPiece : MonoBehaviour
         Deactivate();
     }
 
+    public void Activate()
+    {
+        inactivePiecesSet.Remove(gameObject);
+        gameObject.SetActive(true);
+        controllingPlayer.playerPieces.Add(gameObject);
+    }
+
     public void Deactivate()
     {
         inactivePiecesSet.Add(gameObject);
         gameObject.SetActive(false);
+        controllingPlayer.playerPieces.Remove(gameObject);
     }
 
     public ChessboardPosition GetChessboardPosition()

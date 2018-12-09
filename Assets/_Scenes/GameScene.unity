@@ -1739,6 +1739,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114016642713242652, guid: c4fe2da5ab9081e499ae70e7dee480ac,
+        type: 2}
+      propertyPath: startingLayout
+      value: 
+      objectReference: {fileID: 11400000, guid: 2da8feb1b3369074eacc38ac65ea62aa,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4fe2da5ab9081e499ae70e7dee480ac, type: 2}
   m_IsPrefabParent: 0
@@ -3369,6 +3375,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4200789914995720, guid: 4f0f88986e1f71049aa162d46ae79c85,
     type: 2}
   m_PrefabInternal: {fileID: 1085149123}
+--- !u!114 &1089048629 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114884041099611434, guid: 47c2c52338de6da428a6298596296730,
+    type: 2}
+  m_PrefabInternal: {fileID: 1569997697}
+  m_Script: {fileID: 11500000, guid: b3983f37d0166e34299cdcbb6a7bc961, type: 3}
 --- !u!4 &1110264869 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4542431464190806, guid: c4fe2da5ab9081e499ae70e7dee480ac,
@@ -4699,6 +4711,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 713284866}
     m_Modifications:
+    - target: {fileID: 114000496410671362, guid: 47c2c52338de6da428a6298596296730,
+        type: 2}
+      propertyPath: eventResponsePairs.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000496410671362, guid: 47c2c52338de6da428a6298596296730,
+        type: 2}
+      propertyPath: eventResponsePairs.Array.data[4].response.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224614838504523518, guid: 47c2c52338de6da428a6298596296730,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -4807,7 +4829,49 @@ Prefab:
     - target: {fileID: 224219011653914664, guid: 47c2c52338de6da428a6298596296730,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000029887902
+      value: 0.000019768175
+      objectReference: {fileID: 0}
+    - target: {fileID: 224219011653914664, guid: 47c2c52338de6da428a6298596296730,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000496410671362, guid: 47c2c52338de6da428a6298596296730,
+        type: 2}
+      propertyPath: eventResponsePairs.Array.data[4].gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: fbaff98838bdf9743959d1a27d4f1b8b,
+        type: 2}
+    - target: {fileID: 114000496410671362, guid: 47c2c52338de6da428a6298596296730,
+        type: 2}
+      propertyPath: eventResponsePairs.Array.data[4].response.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1089048629}
+    - target: {fileID: 114000496410671362, guid: 47c2c52338de6da428a6298596296730,
+        type: 2}
+      propertyPath: eventResponsePairs.Array.data[4].response.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RewriteLastMove
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000496410671362, guid: 47c2c52338de6da428a6298596296730,
+        type: 2}
+      propertyPath: eventResponsePairs.Array.data[4].response.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000496410671362, guid: 47c2c52338de6da428a6298596296730,
+        type: 2}
+      propertyPath: eventResponsePairs.Array.data[4].response.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000496410671362, guid: 47c2c52338de6da428a6298596296730,
+        type: 2}
+      propertyPath: eventResponsePairs.Array.data[4].response.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000496410671362, guid: 47c2c52338de6da428a6298596296730,
+        type: 2}
+      propertyPath: eventResponsePairs.Array.data[4].response.m_TypeName
+      value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 47c2c52338de6da428a6298596296730, type: 2}
