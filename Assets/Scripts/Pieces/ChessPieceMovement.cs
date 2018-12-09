@@ -5,6 +5,8 @@ public abstract class ChessPieceMovement : MonoBehaviour
 {
     [HideInInspector]
     public ChessboardPosition simulatedPosition;
+    [HideInInspector]
+    public ChessboardPosition currentPosition;
 
     [SerializeField]
     protected ChessPiece chessPiece;
@@ -15,8 +17,7 @@ public abstract class ChessPieceMovement : MonoBehaviour
 
     protected List<ChessboardPosition> availablePositions = new List<ChessboardPosition>();
     protected List<ChessboardPosition> capturablePositions = new List<ChessboardPosition>();
-
-    protected ChessboardPosition currentPosition;
+   
     protected bool hasMovedOnce;
 
     public abstract List<ChessboardPosition> GetAvailableCapturePositions();
@@ -32,21 +33,20 @@ public abstract class ChessPieceMovement : MonoBehaviour
         return availablePositions;
     }
 
-    private void Start()
+    private void OnDisable()
+    {
+        hasMovedOnce = false;
+    }
+
+    protected virtual void OnEnable()
     {
         currentPosition = ChessboardPositionConverter.Vector3ToChessboardPosition(transform.localPosition);
         simulatedPosition = currentPosition;
     }
 
-    public void SetHasMoved()
+    public void SetHasMovedOnce()
     {
         hasMovedOnce = true;
-    }
-
-    public void SetCurrentPosition(ChessboardPosition chessboardPosition)
-    {
-        currentPosition = chessboardPosition;
-        simulatedPosition = chessboardPosition;
     }
 
     public bool IsPieceAtPositionOpponent(ChessboardPosition chessboardPosition)
@@ -144,5 +144,12 @@ public abstract class ChessPieceMovement : MonoBehaviour
 
         simulatedPosition = currentPosition;
         return isInCheck;
+    }
+
+    public void Move(ChessboardPosition position)
+    {
+        transform.localPosition = ChessboardPositionConverter.ChessboardPositionToVector3(position);
+        currentPosition = position;
+        simulatedPosition = position;
     }
 }

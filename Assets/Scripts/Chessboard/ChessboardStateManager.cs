@@ -28,11 +28,6 @@ public class ChessboardStateManager : ScriptableObject
         return checkDetector.IsPlayerInCheck(player);
     }
 
-    public ChessPiece GetPieceThatIsCausingCheck(Player checkedPlayer)
-    {
-        return checkDetector.GetPieceThatIsCausingCheck(activePiecesSet.Items, checkedPlayer);
-    }
-
     public ChessPieceInfo GetChessPieceInfoAtPosition(ChessboardPosition chessboardPosition)
     {
         int columnPosition = chessboardPosition.column;
@@ -79,6 +74,7 @@ public class ChessboardStateManager : ScriptableObject
     public void RemoveCapturedPieceAtPositionAndDeactivate(ChessboardPosition chessboardPosition)
     {
         ChessPiece capturedChessPiece = GetChessPieceAtPosition(chessboardPosition);
+        capturedChessPiece.controllingPlayer.playerPieces.Remove(capturedChessPiece.gameObject);
         activePiecesSet.Remove(capturedChessPiece.gameObject);
         capturedChessPiece.Deactivate();
     }
@@ -127,14 +123,41 @@ public class ChessboardStateManager : ScriptableObject
 
     public void GetAllAvailableCapturePositionsOfPlayer(Player player)
     {
-        player.availablePositionsSet.Clear();
+        player.availableCapturePositionsSet.Clear();
         for (int i = 0; i < activePiecesSet.Items.Count; ++i) {
             ChessPiece piece = activePiecesSet.Items[i].GetComponent<ChessPiece>();
             if (piece.controllingPlayer == player) {
-                List<ChessboardPosition> availablePositionsForPiece = piece.GetComponent<ChessPieceMovement>().GetAvailableCapturePositions();
-                for (int j = 0; j < availablePositionsForPiece.Count; ++j) {
-                    player.availablePositionsSet.Add(availablePositionsForPiece[j]);
+                List<ChessboardPosition> availableCapturePositionsForPiece = piece.GetComponent<ChessPieceMovement>().GetAvailableCapturePositions();
+                for (int j = 0; j < availableCapturePositionsForPiece.Count; ++j) {
+                    player.availableCapturePositionsSet.Add(availableCapturePositionsForPiece[j]);
                 }
+            }
+        }
+    }
+
+    public List<ChessboardPosition> GetAllAvailablePositionsOfPlayer(Player player)
+    {
+        List<ChessboardPosition> availablePositions = new List<ChessboardPosition>();
+
+        for (int i = 0; i < activePiecesSet.Items.Count; ++i) {
+            ChessPiece piece = activePiecesSet.Items[i].GetComponent<ChessPiece>();
+            if (piece.controllingPlayer == player) {
+                List<ChessboardPosition> availablePositionsForPiece = piece.GetComponent<ChessPieceMovement>().GetAvailablePositions();
+                for (int j = 0; j < availablePositionsForPiece.Count; ++j) {
+                    availablePositions.Add(availablePositionsForPiece[j]);
+                }
+            }
+        }
+
+        return availablePositions;
+    }
+
+    public void UpdatePlayerPiecesSet(Player player)
+    {
+        player.playerPieces.Clear();
+        for (int i = 0; i < activePiecesSet.Items.Count; ++i) {
+            if (activePiecesSet.Items[i].GetComponent<ChessPiece>().controllingPlayer == player) {
+                player.playerPieces.Add(activePiecesSet.Items[i]);
             }
         }
     }

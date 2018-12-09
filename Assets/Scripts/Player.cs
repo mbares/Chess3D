@@ -5,8 +5,9 @@ public class Player : ScriptableObject
 {
     public string playerName;
     public PieceColor piecesColor;
-    public PlayerAvailablePositionsSet availablePositionsSet;
+    public PlayerAvailablePositionsSet availableCapturePositionsSet;
     public PlayerAvailablePositionsSet opponentAvailablePositionsSet;
+    public ChessPiecesSet playerPieces;
     public ChessboardPosition forward;
     public ChessboardPosition forwardLeft;
     public ChessboardPosition forwardRight;

@@ -14,6 +14,7 @@ public class MoveDisplayManager : MonoBehaviour
 
     public void Reset()
     {
+        turnCounter = 0;
         turnNumber = 1;
         moveDisplayText.text = turnNumber + ".";
     }
