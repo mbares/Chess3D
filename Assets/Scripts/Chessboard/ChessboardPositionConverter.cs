@@ -10,14 +10,14 @@ public static class ChessboardPositionConverter
         return new Vector3(chessboardPosition.column * SQUARE_SIZE, 0f, chessboardPosition.row * SQUARE_SIZE);
     }
 
-    public static Vector3 ChessboardPositionDataToVector3(string data)
+    public static ChessboardPosition StringToChessboardPosition(string data)
     {
         string columnData = data.Substring(0, 1);
         string rowData = data.Substring(1, 1);
         int row;
         int.TryParse(rowData, out row);
         int column = Array.IndexOf(ChessboardPosition.columnLabels, columnData);
-        return ChessboardPositionToVector3(new ChessboardPosition(column, row));
+        return new ChessboardPosition(column, row);
     }
 
     public static ChessboardPosition Vector3ToChessboardPosition(Vector3 position)

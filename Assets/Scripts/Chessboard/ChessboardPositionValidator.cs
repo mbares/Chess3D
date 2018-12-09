@@ -3,7 +3,7 @@
     private const int MIN_POSITION = 0;
     private const int MAX_POSITION = 7;
 
-    public static bool IsPositionEmpty(ChessboardPosition chessboardPosition, ChessboardState chessboardState)
+    public static bool IsPositionEmpty(ChessboardPosition chessboardPosition, ChessboardStateManager chessboardState)
     {
         return chessboardState.GetChessPieceInfoAtPosition(chessboardPosition) == null;
     }

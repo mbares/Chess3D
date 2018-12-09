@@ -67,7 +67,7 @@ public class ChessboardLayoutCustomEditor : Editor
 
                 if (i >= 0 && j >= 0 && j < 8) {
                     EditorGUILayout.BeginHorizontal(rowStyle);
-                    chessboardPiecesLayout.chessboardSquaresInfo[i].row[j] = (PieceLayoutLabel)EditorGUILayout.EnumPopup(chessboardPiecesLayout.chessboardSquaresInfo[i].row[j], enumStyle);
+                    chessboardPiecesLayout.chessboardSquaresInfo[i].row[j] = (PieceLabel)EditorGUILayout.EnumPopup(chessboardPiecesLayout.chessboardSquaresInfo[i].row[j], enumStyle);
                     EditorGUILayout.EndHorizontal();
                 }
             }

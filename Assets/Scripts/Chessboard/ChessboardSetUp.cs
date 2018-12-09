@@ -15,25 +15,14 @@ public class ChessboardSetUp : MonoBehaviour
     [SerializeField]
     private Transform piecesContainer;
 
-    private void OnApplicationFocus(bool focus)
+    private void OnApplicationQuit()
     {
-        if (!focus) {
-            gameManager.SaveUnfinishedGameState();
-        }
+        gameManager.SaveUnfinishedGameState();
+        gameManager.SaveUnfinishedGameMoves();
+
     }
 
     private void Start()
-    {
-        StartNewGame();
-    }
-
-    private void StartNewGame()
-    {
-        SetUpChessboardLayout(startingLayout);
-        gameManager.StartNewGame();
-    }
-
-    private void ContinueLastGame()
     {
         if (GameStateSerializer.LoadGameState() != null) {
             gameManager.chessboardState.SetUnfinishedGameLayout();
@@ -42,6 +31,12 @@ public class ChessboardSetUp : MonoBehaviour
         } else {
             StartNewGame();
         }
+    }
+
+    public void StartNewGame()
+    {
+        SetUpChessboardLayout(startingLayout);
+        gameManager.StartNewGame();
     }
 
     private void SetUpChessboardLayout(ChessboardPiecesLayout layout)
@@ -60,9 +55,9 @@ public class ChessboardSetUp : MonoBehaviour
         }
     }
 
-    private GameObject FindInactiveChessPieceWithLabel(PieceLayoutLabel label)
+    private GameObject FindInactiveChessPieceWithLabel(PieceLabel label)
     {
-        for (int i = inactivePiecesSet.Items.Count - 1; i >= 0; i--) {
+        for (int i = inactivePiecesSet.Items.Count - 1; i >= 0; --i) {
             if (inactivePiecesSet.Items[i].GetComponent<ChessPiece>().chessPieceInfo.label == label) {
                 GameObject chessPiece = inactivePiecesSet.Items[i];
                 inactivePiecesSet.Remove(inactivePiecesSet.Items[i]);

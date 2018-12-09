@@ -115,8 +115,9 @@ MonoBehaviour:
   positionHighlightManager: {fileID: 11400000, guid: d65074cccdc52ab41a8634c9bedcb5b4,
     type: 2}
   gameManager: {fileID: 11400000, guid: 1badf658ee66784469eacbfb0c06b056, type: 2}
-  chessboardState: {fileID: 11400000, guid: 388f0123a1c5f6f46a37eaea2ff4afd8, type: 2}
+  chessboardState: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d, type: 2}
   chessMoveRecorder: {fileID: 11400000, guid: 5cc5dc039cbba464e97d109a976a0abe, type: 2}
+  checkDetector: {fileID: 11400000, guid: 82b888b327367f14588fae3157c15b5b, type: 2}
   dragFloatingHeight: 1
 --- !u!114 &114062641906751880
 MonoBehaviour:
@@ -146,6 +147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82bf1845bb242064ea065ac318b5a351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  simulatedPosition:
+    column: 0
+    row: 0
   chessPiece: {fileID: 114062641906751880}
   gameManager: {fileID: 11400000, guid: 1badf658ee66784469eacbfb0c06b056, type: 2}
-  chessboardState: {fileID: 11400000, guid: 388f0123a1c5f6f46a37eaea2ff4afd8, type: 2}
+  chessboardState: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d, type: 2}

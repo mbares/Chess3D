@@ -30,7 +30,7 @@ public class ChessPieceInfo
 {
     public PieceColor color;
     public PieceType type;
-    public PieceLayoutLabel label;
+    public PieceLabel label;
 }
 
 public enum PieceType
@@ -43,8 +43,8 @@ public enum PieceColor
     White, Black
 }
 
-public enum PieceLayoutLabel
+public enum PieceLabel
 {
-    Empty, WPwn, WRk, Wknt, WBsh, WQn, WKng,
-    BPwn, BRk, BKnt, BBsh, BQn, BKng
+    Empty, WP, WR, WN, WB, WQ, WK,
+    BP, BR, BN, BB, BQ, BK
 }
