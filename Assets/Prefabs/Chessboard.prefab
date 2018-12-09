@@ -1606,7 +1606,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 11400000, guid: 1badf658ee66784469eacbfb0c06b056, type: 2}
-  startingLayout: {fileID: 11400000, guid: 97c5d70076cf1ca4390a358584753815, type: 2}
+  enPassantManager: {fileID: 11400000, guid: 3a1d8cbd29ae0b1429986b09f3ab5443, type: 2}
+  startingLayout: {fileID: 11400000, guid: 3b8933035953eb147838afddebcbe653, type: 2}
   unfinishedGameLayout: {fileID: 11400000, guid: 2b5bdc1bc0e4ed642ad40315cc5340fc,
     type: 2}
   inactivePiecesSet: {fileID: 11400000, guid: 6c17f45597d31254b8f841c6a6643f99, type: 2}
@@ -1630,6 +1631,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 114016642713242652}
           m_MethodName: StartNewGame
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - gameEvent: {fileID: 11400000, guid: 83c7a58da99bf5f46b51598337f02493, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114016642713242652}
+          m_MethodName: ClearEnPassantPosition
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

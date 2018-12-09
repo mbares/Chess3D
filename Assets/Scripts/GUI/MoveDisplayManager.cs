@@ -35,6 +35,18 @@ public class MoveDisplayManager : MonoBehaviour
         moveDisplayText.text += "  " + chessMoveRecorder.GetLastMoveMade();
     }
 
+    public void RewriteLastMove()
+    {
+        string currentText = moveDisplayText.text;
+        int indexOfLastWrittenMove = currentText.LastIndexOf(" ") + 1;
+        int indexOfLastNewRow = currentText.LastIndexOf("\n");
+        currentText = currentText.Remove(indexOfLastWrittenMove);
+        moveDisplayText.text = currentText + chessMoveRecorder.GetLastMoveMade();
+        if (indexOfLastNewRow > indexOfLastWrittenMove) {
+            moveDisplayText.text += "\n" + turnNumber + ".";
+        }
+    }
+
     public void DisplayUnfinishedGameMoves()
     {
         Reset();

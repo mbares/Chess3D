@@ -11,4 +11,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9b7d96be4e5644c9ea97062d1655c8, type: 3}
   m_Name: Chess Move Recorder
   m_EditorClassIdentifier: 
+  playerMoves:
+    moves:
+    - from:
+        column: 1
+        row: 5
+      to:
+        column: 1
+        row: 7
+    - from:
+        column: 5
+        row: 2
+      to:
+        column: 5
+        row: 0
+    - from:
+        column: 2
+        row: 0
+      to:
+        column: 1
+        row: 1
+    - from:
+        column: 7
+        row: 7
+      to:
+        column: 7
+        row: 6
+    - from:
+        column: 0
+        row: 0
+      to:
+        column: 0
+        row: 1
+    - from:
+        column: 4
+        row: 2
+      to:
+        column: 4
+        row: 3
+    notatedMoves:
+    - b8Q
+    - f1B
+    - Bb2
+    - Kh7
+    - Ka2
+    - Re4
   moveMade: {fileID: 11400000, guid: f17fb02b1f04aaa44977599b6b28814a, type: 2}
+  pawnPromotionRewrite: {fileID: 11400000, guid: fbaff98838bdf9743959d1a27d4f1b8b,
+    type: 2}

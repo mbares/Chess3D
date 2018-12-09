@@ -4,19 +4,21 @@ using UnityEngine;
 public class MouseDrag : MonoBehaviour
 {
     [SerializeField]
-    protected ChessPiece chessPiece;
+    private ChessPiece chessPiece;
     [SerializeField]
     private ChessPieceMovement chessPieceMovement;
     [SerializeField]
-    protected PositionHighlightManager positionHighlightManager;
+    private PositionHighlightManager positionHighlightManager;
     [SerializeField]
-    protected GameManager gameManager;
+    private GameManager gameManager;
     [SerializeField]
-    protected ChessboardStateManager chessboardState;
+    private ChessboardStateManager chessboardState;
     [SerializeField]
-    protected ChessMoveRecorder chessMoveRecorder;
+    private ChessMoveRecorder chessMoveRecorder;
     [SerializeField]
-    protected CheckDetector checkDetector;
+    private CheckDetector checkDetector;
+    [SerializeField]
+    private EnPassantManager enPassantManager;
     [SerializeField]
     private float dragFloatingHeight = 1;
 
@@ -87,20 +89,42 @@ public class MouseDrag : MonoBehaviour
         if (gameManager.currentPlayer == chessPiece.controllingPlayer) {
             if (availablePositions.Contains(positionUnderDraggedPiece)) {
                 ChessPiece capturedPiece = null;
+                bool enPassantMove = false;
+
                 if (ExistsCapturablePieceAtAvailablePosition()) {
                     capturedPiece = chessboardState.GetChessPieceAtPosition(positionUnderDraggedPiece);
                     chessboardState.RemoveCapturedPieceAtPositionAndDeactivate(positionUnderDraggedPiece);
+                } else if (chessPiece.chessPieceInfo.type == PieceType.Pawn && enPassantManager.enPassantPosition != null && enPassantManager.enPassantPosition.Equals(positionUnderDraggedPiece)) {
+                    capturedPiece = enPassantManager.pieceCausingEnPassant;
+                    chessboardState.RemoveCapturedPieceAtPositionAndDeactivate(capturedPiece.GetChessboardPosition());
+                    enPassantMove = true;
                 }
+
+                KingMovement kingMovement = chessPiece.GetComponent<KingMovement>();
 
                 ChessboardPosition lastPosition = chessPieceMovement.currentPosition;
                 UpdatePieceData();
                 availablePositions.Clear();
                 chessPieceMovement.Move(positionUnderDraggedPiece);
-                chessPieceMovement.SetHasMovedOnce();
+                chessPieceMovement.hasMoved = true;
 
                 if (checkDetector.IsMoveCausingCheck(chessPiece)) {
                     gameManager.SetOtherPlayerInCheck(chessPiece.controllingPlayer);
                     chessMoveRecorder.RecordCheck(chessPiece, lastPosition, positionUnderDraggedPiece, capturedPiece);
+                } else if (enPassantMove) {
+                    chessMoveRecorder.RecordEnPassant(lastPosition, positionUnderDraggedPiece);
+                } else if (kingMovement != null && positionUnderDraggedPiece.Equals(kingMovement.GetKingsideCastlingKingPosition())) {
+                    ChessPieceMovement kingsideRook = kingMovement.GetKingsideRook();
+                    ChessboardPosition lastRookPosition = kingsideRook.currentPosition;
+                    kingsideRook.Move(kingMovement.GetKingsideCastlingRookPosition());
+                    kingsideRook.hasMoved = true;
+                    chessMoveRecorder.RecordKingsideCastling(new ChessMove(lastPosition, positionUnderDraggedPiece), new ChessMove(lastRookPosition, kingsideRook.currentPosition));
+                } else if (kingMovement != null && positionUnderDraggedPiece.Equals(kingMovement.GetQueensideCastlingKingPosition())) {
+                    ChessPieceMovement queensideRook = kingMovement.GetQueensideRook();
+                    ChessboardPosition lastRookPosition = queensideRook.currentPosition;
+                    queensideRook.Move(kingMovement.GetQueensideCastlingRookPosition());
+                    queensideRook.hasMoved = true;
+                    chessMoveRecorder.RecordQueensideCastling(new ChessMove(lastPosition, positionUnderDraggedPiece), new ChessMove(lastRookPosition, queensideRook.currentPosition));
                 } else {
                     chessMoveRecorder.RecordNormalMove(chessPiece, lastPosition, positionUnderDraggedPiece, capturedPiece);
                 }
@@ -123,7 +147,7 @@ public class MouseDrag : MonoBehaviour
     private bool ExistsCapturablePieceAtAvailablePosition()
     {
         if (chessboardState.GetChessPieceAtPosition(positionUnderDraggedPiece) != null && chessPieceMovement.IsPieceAtPositionOpponent(positionUnderDraggedPiece)) {
-                return true;
+            return true;
         }
         return false;
     }

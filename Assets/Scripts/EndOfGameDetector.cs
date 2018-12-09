@@ -56,7 +56,6 @@ public class EndOfGameDetector : ScriptableObject
 
     private bool PlayersHaveInsufficientMaterial()
     {
-        Debug.Log(whitePlayerPieces.Items.Count + " " + blackPlayerPieces.Items.Count);
         if (whitePlayerPieces.Items.Count == 1 && blackPlayerPieces.Items.Count == 1) {
             return true;
         } else if (whitePlayerPieces.Items.Count == 2 && PlayerPiecesSetContains(PieceType.Bishop, whitePlayerPieces) && blackPlayerPieces.Items.Count == 1) {

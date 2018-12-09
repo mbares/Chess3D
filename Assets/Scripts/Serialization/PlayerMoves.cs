@@ -32,6 +32,16 @@ public class ChessMove
         this.to = to;
     }
 
+    public string PawnPromotionToAlgebraicNotation(PieceLabel promotedTo)
+    {
+        return to.ToString() + promotedTo.ToString().Substring(1);
+    }
+
+    public string EnPassantToAlgebraicNotation()
+    {
+        return from.ToString().Substring(0, 1) + "x" + to.ToString();
+    }
+
     public string ToAlgebraicNotationString(MoveType moveType, ChessPiece movedPiece, ChessPiece capturedPiece = null)
     {
         string algebraicNotation = "";
@@ -40,10 +50,6 @@ public class ChessMove
             case MoveType.Check:
                 algebraicNotation = "+";
                 break;
-            case MoveType.KingsideCastling:
-                return "0-0";
-            case MoveType.QueenSideCastling:
-                return "0-0-0";            
             default:
                 break;
         }
@@ -75,5 +81,5 @@ public class ChessMove
 
 public enum MoveType
 {
-    Normal, Check, KingsideCastling, QueenSideCastling
+    Normal, Check
 }

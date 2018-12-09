@@ -130,9 +130,15 @@ MonoBehaviour:
   simulatedPosition:
     column: 0
     row: 0
+  currentPosition:
+    column: 0
+    row: 0
   chessPiece: {fileID: 114262066933529748}
   gameManager: {fileID: 11400000, guid: 1badf658ee66784469eacbfb0c06b056, type: 2}
   chessboardState: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d, type: 2}
+  awaitingPromotion: 0
+  pawnPromotionEvent: {fileID: 11400000, guid: afbc346f5161e3943abf8c1fbc80d688, type: 2}
+  enPassantManager: {fileID: 11400000, guid: 3a1d8cbd29ae0b1429986b09f3ab5443, type: 2}
 --- !u!114 &114977940554238066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,4 +158,5 @@ MonoBehaviour:
   chessboardState: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d, type: 2}
   chessMoveRecorder: {fileID: 11400000, guid: 5cc5dc039cbba464e97d109a976a0abe, type: 2}
   checkDetector: {fileID: 11400000, guid: 82b888b327367f14588fae3157c15b5b, type: 2}
+  enPassantManager: {fileID: 11400000, guid: 3a1d8cbd29ae0b1429986b09f3ab5443, type: 2}
   dragFloatingHeight: 1

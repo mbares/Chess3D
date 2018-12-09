@@ -8,6 +8,8 @@ public class ChessMoveRecorder : ScriptableObject
 
     [SerializeField]
     private GameEvent moveMade;
+    [SerializeField]
+    private GameEvent pawnPromotionRewrite;
 
     private string lastMoveMade;
 
@@ -32,7 +34,7 @@ public class ChessMoveRecorder : ScriptableObject
 
     public string GetLastMoveMade()
     {
-        return lastMoveMade;    
+        return lastMoveMade;
     }
 
     public void RecordNormalMove(ChessPiece movedPiece, ChessboardPosition from, ChessboardPosition to, ChessPiece capturedPiece = null)
@@ -43,19 +45,42 @@ public class ChessMoveRecorder : ScriptableObject
         RecordMove(move);
     }
 
-    public void RecordPawnPromotion()
+    public void RecordPawnPromotion(PieceLabel promotedTo)
     {
+        ChessMove lastMove = playerMoves.moves[playerMoves.moves.Count - 1];
+        lastMoveMade = lastMove.PawnPromotionToAlgebraicNotation(promotedTo);
 
+        playerMoves.notatedMoves[playerMoves.notatedMoves.Count - 1] = lastMoveMade;
+
+        pawnPromotionRewrite.Raise();
     }
 
-    public void RecordCastling()
+    public void RecordKingsideCastling(ChessMove kingMove, ChessMove rookMove)
     {
-
+        lastMoveMade = "0-0";
+        RecordCastling(kingMove, rookMove);
     }
 
-    public void RecordEnPassant()
+    public void RecordQueensideCastling(ChessMove kingMove, ChessMove rookMove)
     {
+        lastMoveMade = "0-0-0";
+        RecordCastling(kingMove, rookMove);
+    }
 
+    private void RecordCastling(ChessMove kingMove, ChessMove rookMove)
+    {
+        playerMoves.Add(kingMove, lastMoveMade);
+        playerMoves.Add(rookMove, "");
+
+        moveMade.Raise();
+    }
+
+    public void RecordEnPassant(ChessboardPosition from, ChessboardPosition to)
+    {
+        ChessMove move = new ChessMove(from, to);
+        lastMoveMade = move.EnPassantToAlgebraicNotation();
+
+        RecordMove(move);
     }
 
     public void RecordCheck(ChessPiece movedPiece, ChessboardPosition from, ChessboardPosition to, ChessPiece capturedPiece = null)

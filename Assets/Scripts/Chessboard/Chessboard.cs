@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 
-public class ChessboardSetUp : MonoBehaviour
+public class Chessboard : MonoBehaviour
 {
     [SerializeField]
     private GameManager gameManager;
+    [SerializeField]
+    private EnPassantManager enPassantManager;
     [SerializeField]
     private ChessboardPiecesLayout startingLayout;
     [SerializeField]
@@ -36,6 +38,7 @@ public class ChessboardSetUp : MonoBehaviour
 
     public void StartNewGame()
     {
+        enPassantManager.Reset();
         SetUpChessboardLayout(startingLayout);
         gameManager.StartNewGame();
     }
@@ -76,5 +79,10 @@ public class ChessboardSetUp : MonoBehaviour
             }
         }
         return null;
+    }
+
+    public void ClearEnPassantPosition()
+    {
+        enPassantManager.ClearEnPassantPosition();
     }
 }
