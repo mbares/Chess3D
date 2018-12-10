@@ -62,8 +62,8 @@ public class ChessMoveRecorder : ScriptableObject
 
     private void RecordCastling(ChessMove kingMove, ChessMove rookMove)
     {
-        playerMoves.Add(kingMove, lastMoveMade);
-        playerMoves.Add(rookMove, "");
+        playerMoves.Add(kingMove);
+        playerMoves.Add(rookMove);
 
         moveMade.Raise();
     }
@@ -86,7 +86,7 @@ public class ChessMoveRecorder : ScriptableObject
 
     private void RecordMove(ChessMove move)
     {
-        playerMoves.Add(move, lastMoveMade);
+        playerMoves.Add(move);
         moveMade.Raise();
     }
 }
