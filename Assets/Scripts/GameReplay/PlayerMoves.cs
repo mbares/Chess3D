@@ -13,7 +13,7 @@ public class PlayerMoves
         pawnPromotions.Clear();
     }
 
-    public void Add(ChessMove move, string notatedMove)
+    public void Add(ChessMove move)
     {
         moves.Add(move);
     }
