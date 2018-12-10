@@ -9,8 +9,6 @@ public class Chessboard : MonoBehaviour
     [SerializeField]
     private ChessboardPiecesLayout startingLayout;
     [SerializeField]
-    private ChessboardPiecesLayout unfinishedGameLayout;
-    [SerializeField]
     private ChessPiecesSet inactivePiecesSet;
     [SerializeField]
     private ChessPiecesSet activePiecesSet;
@@ -19,21 +17,14 @@ public class Chessboard : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        gameManager.SaveUnfinishedGameState();
-        gameManager.SaveUnfinishedGameMoves();
         activePiecesSet.Clear();
         inactivePiecesSet.Clear();
     }
 
     private void Start()
     {
-        if (GameStateSerializer.LoadGameState() != null) {
-            gameManager.chessboardState.SetUnfinishedGameLayout();
-            SetUpChessboardLayout(unfinishedGameLayout);
-            gameManager.ContinueGame();
-        } else {
-            StartNewGame();
-        }
+        StartNewGame();
+        gameManager.SetPlayerInteractionAllowed(true);
     }
 
     public void StartNewGame()

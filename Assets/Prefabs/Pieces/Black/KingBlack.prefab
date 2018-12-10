@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114977621327318704}
   - component: {fileID: 114062641906751880}
   - component: {fileID: 114029776625116398}
+  - component: {fileID: 114565206012380354}
   m_Layer: 0
   m_Name: KingBlack
   m_TagString: Untagged
@@ -110,15 +111,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8406ee11b0de24186d4244f6eb2efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pieceMover: {fileID: 114565206012380354}
   chessPiece: {fileID: 114062641906751880}
   chessPieceMovement: {fileID: 114977621327318704}
   positionHighlightManager: {fileID: 11400000, guid: d65074cccdc52ab41a8634c9bedcb5b4,
     type: 2}
   gameManager: {fileID: 11400000, guid: 1badf658ee66784469eacbfb0c06b056, type: 2}
-  chessboardState: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d, type: 2}
-  chessMoveRecorder: {fileID: 11400000, guid: 5cc5dc039cbba464e97d109a976a0abe, type: 2}
-  checkDetector: {fileID: 11400000, guid: 82b888b327367f14588fae3157c15b5b, type: 2}
-  enPassantManager: {fileID: 11400000, guid: 3a1d8cbd29ae0b1429986b09f3ab5443, type: 2}
   dragFloatingHeight: 1
 --- !u!114 &114062641906751880
 MonoBehaviour:
@@ -137,6 +135,26 @@ MonoBehaviour:
     label: 12
   controllingPlayer: {fileID: 11400000, guid: d25a185118f8f114eba0be7b101edab0, type: 2}
   inactivePiecesSet: {fileID: 11400000, guid: 6c17f45597d31254b8f841c6a6643f99, type: 2}
+--- !u!114 &114565206012380354
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1719915095764708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 315b6d459e664e640ba4fcaf07a3ea92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 11400000, guid: 1badf658ee66784469eacbfb0c06b056, type: 2}
+  chessboardStateManager: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
+    type: 2}
+  enPassantManager: {fileID: 11400000, guid: 3a1d8cbd29ae0b1429986b09f3ab5443, type: 2}
+  chessMoveRecorder: {fileID: 11400000, guid: 5cc5dc039cbba464e97d109a976a0abe, type: 2}
+  checkDetector: {fileID: 11400000, guid: 82b888b327367f14588fae3157c15b5b, type: 2}
+  positionHighlightManager: {fileID: 11400000, guid: d65074cccdc52ab41a8634c9bedcb5b4,
+    type: 2}
+  chessPieceMovement: {fileID: 114977621327318704}
 --- !u!114 &114977621327318704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,6 +172,7 @@ MonoBehaviour:
   currentPosition:
     column: 0
     row: 0
+  hasMoved: 0
   chessPiece: {fileID: 114062641906751880}
   gameManager: {fileID: 11400000, guid: 1badf658ee66784469eacbfb0c06b056, type: 2}
   chessboardState: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d, type: 2}

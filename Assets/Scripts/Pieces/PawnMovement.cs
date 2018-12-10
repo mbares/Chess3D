@@ -10,6 +10,10 @@ public class PawnMovement : ChessPieceMovement
     private GameEvent pawnPromotionEvent;
     [SerializeField]
     private EnPassantManager enPassantManager;
+    [SerializeField]
+    private ReplayData replayData;
+    [SerializeField]
+    private PawnPromotionManager pawnPromotionManager;
 
     public override List<ChessboardPosition> GetAvailablePositions()
     {
@@ -67,10 +71,27 @@ public class PawnMovement : ChessPieceMovement
         base.Move(position);
         if (chessPiece.chessPieceInfo.color == PieceColor.White && position.row == ChessboardPositionValidator.MAX_POSITION) {
             awaitingPromotion = true;
-            pawnPromotionEvent.Raise();
+            if (gameManager.IsPlayerInteractionAllowed()) {
+                pawnPromotionEvent.Raise();
+            } else {
+                ReplayPromote(position);
+            }
         } else if (chessPiece.chessPieceInfo.color == PieceColor.Black && position.row == ChessboardPositionValidator.MIN_POSITION) {
             awaitingPromotion = true;
-            pawnPromotionEvent.Raise();
+            if (gameManager.IsPlayerInteractionAllowed()) {
+                pawnPromotionEvent.Raise();
+            } else {
+                ReplayPromote(position);
+            }
+        }
+    }
+
+    private void ReplayPromote(ChessboardPosition position)
+    {
+        foreach (KeyValuePair<ChessboardPosition, PieceType> entry in replayData.playerMoves.pawnPromotions) {
+            if (entry.Key.Equals(position)) {
+                pawnPromotionManager.PromotePawn(entry.Value);
+            }
         }
     }
 

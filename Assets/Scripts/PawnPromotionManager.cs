@@ -32,7 +32,7 @@ public class PawnPromotionManager : ScriptableObject
                 activePiecesSet.Add(newPiece.gameObject);
                 activePiecesSet.Remove(pawnToPromote.gameObject);
 
-                chessMoveRecorder.RecordPawnPromotion(newPiece.chessPieceInfo.label);
+                chessMoveRecorder.RecordPawnPromotion(newPiece.chessPieceInfo.type, newPiece.chessPieceInfo.label);
                 pawnToPromote.GetComponent<PawnMovement>().awaitingPromotion = false;
 
                 pawnToPromote.Deactivate();

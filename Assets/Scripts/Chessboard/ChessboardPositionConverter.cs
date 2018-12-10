@@ -16,6 +16,7 @@ public static class ChessboardPositionConverter
         string rowData = data.Substring(1, 1);
         int row;
         int.TryParse(rowData, out row);
+        row--;
         int column = Array.IndexOf(ChessboardPosition.columnLabels, columnData);
         return new ChessboardPosition(column, row);
     }

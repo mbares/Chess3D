@@ -46,19 +46,4 @@ public class MoveDisplayManager : MonoBehaviour
             moveDisplayText.text += "\n" + turnNumber + ".";
         }
     }
-
-    public void DisplayUnfinishedGameMoves()
-    {
-        Reset();
-        try {
-            PlayerMoves moves = PlayerMovesSerializer.LoadPlayerMovesForContinue();
-            for (int i = 0; i < moves.notatedMoves.Count; ++i) {
-                moveDisplayText.text += "  " + moves.notatedMoves[i];
-                IncreaseTurnNumber();
-            }
-            chessMoveRecorder.playerMoves = moves;
-        } catch (FileNotFoundException) {
-            Debug.LogError("Unfinished game moves file not found");
-        }
-    }
 }

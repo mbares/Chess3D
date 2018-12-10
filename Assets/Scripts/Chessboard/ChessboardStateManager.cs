@@ -15,7 +15,6 @@ public class ChessboardStateManager : ScriptableObject
     [SerializeField]
     private ChessboardPiecesLayout unfinishedGameLayout;
 
-    private GameState unfinishedGameState;
     private ChessPiece[,] piecesOnChessboardData = new ChessPiece[NUM_OF_COLUMNS, NUM_OF_ROWS];
 
     public void SetUp()
@@ -97,28 +96,6 @@ public class ChessboardStateManager : ScriptableObject
         }
 
         return chessboardSquaresInfo;
-    }
-
-    public void SetUnfinishedGameLayout()
-    {
-        if (unfinishedGameState == null) {
-            LoadUnfinishedGameState();
-        }
-
-        unfinishedGameLayout.chessboardSquaresInfo = unfinishedGameState.chessboardSquaresInfo;
-    }
-
-    public PieceColor GetUnfinishedGameCurrentPlayerColor()
-    {
-        if (unfinishedGameState == null) {
-            LoadUnfinishedGameState();
-        }
-        return unfinishedGameState.currentPlayerColor;
-    }
-
-    private void LoadUnfinishedGameState()
-    {
-        unfinishedGameState = GameStateSerializer.LoadGameState();
     }
 
     public void GetAllAvailableCapturePositionsOfPlayer(Player player)
