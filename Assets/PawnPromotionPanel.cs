@@ -4,15 +4,21 @@ public class PawnPromotionPanel : MonoBehaviour
 {
     [SerializeField]
     private PawnPromotionManager pawnPromotionManager;
+    [SerializeField]
+    private GameEvent guiShown;
+    [SerializeField]
+    private GameEvent guiHidden;
 
     public void ShowPawnPromotionPanel()
     {
         gameObject.SetActive(true);
+        guiShown.Raise();
     }
 
     public void HidePawnPromotionPanel()
     {
         gameObject.SetActive(false);
+        guiHidden.Raise();
     }
 
     public void PickQueen()

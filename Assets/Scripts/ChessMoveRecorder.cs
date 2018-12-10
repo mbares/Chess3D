@@ -20,13 +20,6 @@ public class ChessMoveRecorder : ScriptableObject
         }
     }
 
-    public void SavePlayerMovesForContinue()
-    {
-        if (playerMoves.moves.Count > 0) {
-            PlayerMovesSerializer.SavePlayerMovesForContinue(playerMoves);
-        }
-    }
-
     public void ClearMoves()
     {
         playerMoves.Clear();
@@ -45,12 +38,13 @@ public class ChessMoveRecorder : ScriptableObject
         RecordMove(move);
     }
 
-    public void RecordPawnPromotion(PieceLabel promotedTo)
+    public void RecordPawnPromotion(PieceType type, PieceLabel promotedTo)
     {
         ChessMove lastMove = playerMoves.moves[playerMoves.moves.Count - 1];
         lastMoveMade = lastMove.PawnPromotionToAlgebraicNotation(promotedTo);
 
         playerMoves.notatedMoves[playerMoves.notatedMoves.Count - 1] = lastMoveMade;
+        playerMoves.pawnPromotions.Add(lastMove.to, type);
 
         pawnPromotionRewrite.Raise();
     }

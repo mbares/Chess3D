@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -6,11 +7,6 @@ using UnityEngine;
 
 public class PlayerMovesSerializer : MonoBehaviour
 {
-    public static void SavePlayerMovesForContinue(PlayerMoves moves)
-    {
-        SavePlayerMoves(moves, "unfinished_game");
-    }
-
     public static void SavePlayerMovesForReplay(PlayerMoves moves)
     {
         SavePlayerMoves(moves, "replay_" + System.DateTime.Now.ToString("dd-MM-yy_H-mm-ss"));
@@ -19,25 +15,21 @@ public class PlayerMovesSerializer : MonoBehaviour
     public static void SavePlayerMoves(PlayerMoves moves, string name)
     {
         BinaryFormatter binaryFormatter = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/" + name + "_moves.dat");
+        FileStream file = File.Create(Application.persistentDataPath + "/" + name + ".dat");
 
         string data = PlayerMovesToString(moves);
         binaryFormatter.Serialize(file, data);
         file.Close();
     }
 
-    public static PlayerMoves LoadPlayerMovesForContinue()
-    {
-        return LoadPlayerMoves("unfinished_game");
-    }
-
     public static PlayerMoves LoadPlayerMoves(string name)
     {
-        if (File.Exists(Application.persistentDataPath + "/" + name + "_moves.dat")) {
+        if (File.Exists(Application.persistentDataPath + "/" + name + ".dat")) {
             BinaryFormatter binaryFormatter = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/" + name + "_moves.dat", FileMode.Open);
+            FileStream file = File.Open(Application.persistentDataPath + "/" + name + ".dat", FileMode.Open);
             string data = (string)binaryFormatter.Deserialize(file);
 
+            Debug.Log(data);
             PlayerMoves playerMoves = StringToPlayerMoves(data);
 
             file.Close();
@@ -63,6 +55,13 @@ public class PlayerMovesSerializer : MonoBehaviour
                 sb.Append(",");
             }
         }
+        sb.Append("|");
+        foreach (KeyValuePair<ChessboardPosition, PieceType> entry in playerMoves.pawnPromotions) {
+            sb.Append(entry.Key + ":" + entry.Value + ",");
+        }
+        if (sb.ToString().LastIndexOf(',') == sb.ToString().Length - 1) {
+            sb.Remove(sb.Length - 1, 1);
+        }
 
         return sb.ToString();
     }
@@ -73,6 +72,7 @@ public class PlayerMovesSerializer : MonoBehaviour
         string[] parts = data.Split('|');
         string[] chessMoves = parts[0].Split(',');
         string[] notatedMoves = parts[1].Split(',');
+        string[] pawnPromotions = parts[2].Split(',');
 
         for (int i = 0; i < chessMoves.Length; ++i) {
             playerMoves.moves.Add(ChessMove.FromString(chessMoves[i]));
@@ -80,6 +80,11 @@ public class PlayerMovesSerializer : MonoBehaviour
 
         for (int i = 0; i < notatedMoves.Length; ++i) {
             playerMoves.notatedMoves.Add(notatedMoves[i]);
+        }
+
+        for (int i = 0; i < pawnPromotions.Length; ++i) {
+            string[] keyValueString = pawnPromotions[i].Split(':');
+            playerMoves.pawnPromotions.Add(ChessboardPositionConverter.StringToChessboardPosition(keyValueString[0]), (PieceType)Enum.Parse(typeof(PieceType), keyValueString[1]));
         }
         return playerMoves;
     }
@@ -93,7 +98,7 @@ public class PlayerMovesSerializer : MonoBehaviour
         FileInfo[] filesInDir = replaysDirectory.GetFiles(partialName + "*");
         foreach (FileInfo foundFile in filesInDir) {
             string fullName = foundFile.Name;
-            fullName = fullName.Remove(fullName.IndexOf("_moves.dat"));
+            fullName = fullName.Remove(fullName.IndexOf(".dat"));
             try {
                 allReplays.Add(fullName, LoadPlayerMoves(fullName));
             } catch (FileNotFoundException) {

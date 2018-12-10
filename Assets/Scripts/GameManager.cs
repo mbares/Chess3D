@@ -21,6 +21,23 @@ public class GameManager : ScriptableObject
     [SerializeField]
     private EndOfGameDetector endOfGameDetector;
 
+    private bool playerInteractionAllowed;
+
+    private void Awake()
+    {
+        playerInteractionAllowed = true;
+    }
+
+    public void SetPlayerInteractionAllowed(bool value)
+    {
+        playerInteractionAllowed = value;
+    }
+
+    public bool IsPlayerInteractionAllowed()
+    {
+        return playerInteractionAllowed;
+    }
+
     public void StartNewGame()
     {
         chessboardState.SetUp();
@@ -28,14 +45,6 @@ public class GameManager : ScriptableObject
         currentPlayer = whitePlayer;
         chessboardState.UpdatePiecesOnChessboardData();
         newGameStartedEvent.Raise();
-    }
-
-    public void ContinueGame()
-    {
-        chessboardState.SetUp();
-        chessMoveRecorder.ClearMoves();
-        currentPlayer = chessboardState.GetUnfinishedGameCurrentPlayerColor() == PieceColor.White ? whitePlayer : blackPlayer;
-        continuedGameStartedEvent.Raise();
     }
 
     public void SetPlayerPieces()
@@ -72,22 +81,5 @@ public class GameManager : ScriptableObject
     public void GetAllAvailableCapturePositionsOfBlackPlayer()
     {
         chessboardState.GetAllAvailableCapturePositionsOfPlayer(blackPlayer);
-    }
-
-    public void SaveUnfinishedGameState()
-    {
-        if (chessMoveRecorder.playerMoves.moves.Count > 0) {
-            GameState unfinishedGameState = new GameState {
-                currentPlayerColor = currentPlayer.piecesColor,
-                chessboardSquaresInfo = chessboardState.GetUnfinishedChessboardSquaresInfo()
-            };
-
-            GameStateSerializer.SaveGameState(unfinishedGameState);
-        }
-    }
-
-    public void SaveUnfinishedGameMoves()
-    {
-        chessMoveRecorder.SavePlayerMovesForContinue();
     }
 }

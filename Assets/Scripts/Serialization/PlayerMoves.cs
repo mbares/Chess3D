@@ -6,11 +6,13 @@ public class PlayerMoves
 {
     public List<ChessMove> moves = new List<ChessMove>();
     public List<string> notatedMoves = new List<string>();
+    public Dictionary<ChessboardPosition, PieceType> pawnPromotions = new Dictionary<ChessboardPosition, PieceType>();
 
     public void Clear()
     {
         moves.Clear();
         notatedMoves.Clear();
+        pawnPromotions.Clear();
     }
 
     public void Add(ChessMove move, string notatedMove)

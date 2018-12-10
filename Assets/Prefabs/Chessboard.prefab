@@ -303,6 +303,7 @@ GameObject:
   - component: {fileID: 33193535507961504}
   - component: {fileID: 23997481012868470}
   - component: {fileID: 114016642713242652}
+  - component: {fileID: 114043469231069098}
   - component: {fileID: 114869130361250428}
   m_Layer: 0
   m_Name: Chessboard
@@ -1607,12 +1608,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 11400000, guid: 1badf658ee66784469eacbfb0c06b056, type: 2}
   enPassantManager: {fileID: 11400000, guid: 3a1d8cbd29ae0b1429986b09f3ab5443, type: 2}
-  startingLayout: {fileID: 11400000, guid: 3b8933035953eb147838afddebcbe653, type: 2}
-  unfinishedGameLayout: {fileID: 11400000, guid: 2b5bdc1bc0e4ed642ad40315cc5340fc,
-    type: 2}
+  startingLayout: {fileID: 11400000, guid: 97c5d70076cf1ca4390a358584753815, type: 2}
   inactivePiecesSet: {fileID: 11400000, guid: 6c17f45597d31254b8f841c6a6643f99, type: 2}
   activePiecesSet: {fileID: 11400000, guid: 9fd51ee7ea7b51140bf25c6b0be1a514, type: 2}
   piecesContainer: {fileID: 4752156559320716}
+--- !u!114 &114043469231069098
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1807443961754400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be7cf4963a5055747a1a2b07bbd8bd5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 11400000, guid: 1badf658ee66784469eacbfb0c06b056, type: 2}
+  chessboardStateManager: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
+    type: 2}
+  delayBetweenMoves: 1
+  newGameRequest: {fileID: 11400000, guid: 60f12f227a526f34b88cba5fee6865eb, type: 2}
+  replayData: {fileID: 11400000, guid: e3ca245394ec9e14a931c76683c80581, type: 2}
 --- !u!114 &114869130361250428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1648,6 +1664,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 114016642713242652}
           m_MethodName: ClearEnPassantPosition
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - gameEvent: {fileID: 11400000, guid: 8534518b7dd6a334aa3d0f9aacd817c1, type: 2}
+    response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114043469231069098}
+          m_MethodName: PlayReplay
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

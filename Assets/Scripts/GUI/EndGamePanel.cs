@@ -4,21 +4,34 @@ using UnityEngine.UI;
 public class EndGamePanel : MonoBehaviour
 {
     [SerializeField]
+    GameManager gameManager;
+    [SerializeField]
     private ChessMoveRecorder chessMoveRecorder;
     [SerializeField]
-    private Text winLabel;
+    private GameEvent startNewGameEvent;
     [SerializeField]
-    private Button saveReplayButton;
+    private GameEvent guiShown;
+    [SerializeField]
+    private GameEvent guiHidden;
+    [SerializeField]
+    private Text winLabel;
 
     public void ShowEndGamePanel(string gameOutcome)
     {
-        SetUp(gameOutcome);
-        gameObject.SetActive(true);
+        if(gameManager.IsPlayerInteractionAllowed()) {
+            SetUp(gameOutcome);
+            gameObject.SetActive(true);
+            guiShown.Raise();
+        } else {
+            startNewGameEvent.Raise();
+        }
     }
 
     public void HideEndGamePanel()
     {
         gameObject.SetActive(false);
+        startNewGameEvent.Raise();
+        guiHidden.Raise();
     }
 
     private void SetUp(string gameOutcome)
@@ -37,6 +50,10 @@ public class EndGamePanel : MonoBehaviour
                 winLabel.text = "GAME OVER";
                 break;
         }
-        saveReplayButton.onClick.AddListener(() => chessMoveRecorder.SavePlayerMovesForReplay());
+    }
+
+    public void SaveReplay()
+    {
+        chessMoveRecorder.SavePlayerMovesForReplay();
     }
 }

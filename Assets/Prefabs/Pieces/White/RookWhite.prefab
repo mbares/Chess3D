@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114638605250138402}
   - component: {fileID: 114647842446393772}
   - component: {fileID: 114731793636438088}
+  - component: {fileID: 114286511650907966}
   m_Layer: 0
   m_Name: RookWhite
   m_TagString: Untagged
@@ -99,6 +100,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.895717, y: 1.3155541, z: 0.7757138}
   m_Center: {x: 0, y: 0.6577771, z: 0}
+--- !u!114 &114286511650907966
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1416168981342136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 315b6d459e664e640ba4fcaf07a3ea92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 11400000, guid: 1badf658ee66784469eacbfb0c06b056, type: 2}
+  chessboardStateManager: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
+    type: 2}
+  enPassantManager: {fileID: 11400000, guid: 3a1d8cbd29ae0b1429986b09f3ab5443, type: 2}
+  chessMoveRecorder: {fileID: 11400000, guid: 5cc5dc039cbba464e97d109a976a0abe, type: 2}
+  checkDetector: {fileID: 11400000, guid: 82b888b327367f14588fae3157c15b5b, type: 2}
+  positionHighlightManager: {fileID: 11400000, guid: d65074cccdc52ab41a8634c9bedcb5b4,
+    type: 2}
+  chessPieceMovement: {fileID: 114638605250138402}
 --- !u!114 &114638605250138402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,6 +137,7 @@ MonoBehaviour:
   currentPosition:
     column: 0
     row: 0
+  hasMoved: 0
   chessPiece: {fileID: 114647842446393772}
   gameManager: {fileID: 11400000, guid: 1badf658ee66784469eacbfb0c06b056, type: 2}
   chessboardState: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d, type: 2}
@@ -147,13 +169,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8406ee11b0de24186d4244f6eb2efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pieceMover: {fileID: 114286511650907966}
   chessPiece: {fileID: 114647842446393772}
   chessPieceMovement: {fileID: 114638605250138402}
   positionHighlightManager: {fileID: 11400000, guid: d65074cccdc52ab41a8634c9bedcb5b4,
     type: 2}
   gameManager: {fileID: 11400000, guid: 1badf658ee66784469eacbfb0c06b056, type: 2}
-  chessboardState: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d, type: 2}
-  chessMoveRecorder: {fileID: 11400000, guid: 5cc5dc039cbba464e97d109a976a0abe, type: 2}
-  checkDetector: {fileID: 11400000, guid: 82b888b327367f14588fae3157c15b5b, type: 2}
-  enPassantManager: {fileID: 11400000, guid: 3a1d8cbd29ae0b1429986b09f3ab5443, type: 2}
   dragFloatingHeight: 1
