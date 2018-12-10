@@ -164,8 +164,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e69277863b36c44d82ed32884b4348e, type: 2}
   m_IsPrefabParent: 0
@@ -225,8 +224,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc423bb1160d2c74c9e13ddde106be56, type: 2}
   m_IsPrefabParent: 0
@@ -282,8 +280,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f4d5bc9f3a4e844396690f9c0e3b867, type: 2}
   m_IsPrefabParent: 0
@@ -375,8 +372,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f0f88986e1f71049aa162d46ae79c85, type: 2}
   m_IsPrefabParent: 0
@@ -436,8 +432,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba22b2682278d7a48b2d061753d30381, type: 2}
   m_IsPrefabParent: 0
@@ -497,8 +492,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba22b2682278d7a48b2d061753d30381, type: 2}
   m_IsPrefabParent: 0
@@ -558,8 +552,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e69277863b36c44d82ed32884b4348e, type: 2}
   m_IsPrefabParent: 0
@@ -684,8 +677,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f0f88986e1f71049aa162d46ae79c85, type: 2}
   m_IsPrefabParent: 0
@@ -745,8 +737,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e69277863b36c44d82ed32884b4348e, type: 2}
   m_IsPrefabParent: 0
@@ -802,8 +793,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18192507c5240dc4084b416a46fb1432, type: 2}
   m_IsPrefabParent: 0
@@ -859,8 +849,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba22b2682278d7a48b2d061753d30381, type: 2}
   m_IsPrefabParent: 0
@@ -920,8 +909,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f0f88986e1f71049aa162d46ae79c85, type: 2}
   m_IsPrefabParent: 0
@@ -981,8 +969,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18192507c5240dc4084b416a46fb1432, type: 2}
   m_IsPrefabParent: 0
@@ -1042,8 +1029,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a72476acdc619bc4ba34083daa4e5728, type: 2}
   m_IsPrefabParent: 0
@@ -1103,8 +1089,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5142f6227547a44a8d83fda8b921ebe, type: 2}
   m_IsPrefabParent: 0
@@ -1164,8 +1149,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5142f6227547a44a8d83fda8b921ebe, type: 2}
   m_IsPrefabParent: 0
@@ -1321,8 +1305,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a72476acdc619bc4ba34083daa4e5728, type: 2}
   m_IsPrefabParent: 0
@@ -1382,8 +1365,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a72476acdc619bc4ba34083daa4e5728, type: 2}
   m_IsPrefabParent: 0
@@ -1392,93 +1374,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4646993094092184, guid: a72476acdc619bc4ba34083daa4e5728,
     type: 2}
   m_PrefabInternal: {fileID: 334458147}
---- !u!114 &337529930 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114340780308697334, guid: 47c2c52338de6da428a6298596296730,
-    type: 2}
-  m_PrefabInternal: {fileID: 1569997697}
-  m_Script: {fileID: 11500000, guid: 13937a2952cb4fa4cba06b749b941886, type: 3}
---- !u!1 &347526586
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 347526590}
-  - component: {fileID: 347526589}
-  - component: {fileID: 347526588}
-  - component: {fileID: 347526587}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &347526587
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 347526586}
-  m_Enabled: 1
---- !u!124 &347526588
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 347526586}
-  m_Enabled: 1
---- !u!20 &347526589
-Camera:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 347526586}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 55
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &347526590
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 347526586}
-  m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: 5, y: 10.5, z: -3.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
 --- !u!1 &348030968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1601,8 +1496,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e69277863b36c44d82ed32884b4348e, type: 2}
   m_IsPrefabParent: 0
@@ -1658,8 +1552,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c4f42c0aa882bc4db0861872058e56e, type: 2}
   m_IsPrefabParent: 0
@@ -1706,12 +1599,6 @@ Transform:
   m_Father: {fileID: 348030969}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &397630784 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114026863238320164, guid: 47c2c52338de6da428a6298596296730,
-    type: 2}
-  m_PrefabInternal: {fileID: 1569997697}
-  m_Script: {fileID: 11500000, guid: f205f632cb6085b438e1ef0f1ed44a61, type: 3}
 --- !u!1001 &411734256
 Prefab:
   m_ObjectHideFlags: 0
@@ -1751,12 +1638,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114016642713242652, guid: c4fe2da5ab9081e499ae70e7dee480ac,
-        type: 2}
-      propertyPath: startingLayout
-      value: 
-      objectReference: {fileID: 11400000, guid: 97c5d70076cf1ca4390a358584753815,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4fe2da5ab9081e499ae70e7dee480ac, type: 2}
   m_IsPrefabParent: 0
@@ -1811,8 +1692,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e69277863b36c44d82ed32884b4348e, type: 2}
   m_IsPrefabParent: 0
@@ -1872,8 +1752,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18192507c5240dc4084b416a46fb1432, type: 2}
   m_IsPrefabParent: 0
@@ -1933,8 +1812,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a72476acdc619bc4ba34083daa4e5728, type: 2}
   m_IsPrefabParent: 0
@@ -1994,8 +1872,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba22b2682278d7a48b2d061753d30381, type: 2}
   m_IsPrefabParent: 0
@@ -2055,8 +1932,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc423bb1160d2c74c9e13ddde106be56, type: 2}
   m_IsPrefabParent: 0
@@ -2112,8 +1988,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7c1ee0df743d954583613169dc4a1e2, type: 2}
   m_IsPrefabParent: 0
@@ -2173,8 +2048,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a72476acdc619bc4ba34083daa4e5728, type: 2}
   m_IsPrefabParent: 0
@@ -2230,8 +2104,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc423bb1160d2c74c9e13ddde106be56, type: 2}
   m_IsPrefabParent: 0
@@ -2329,8 +2202,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba22b2682278d7a48b2d061753d30381, type: 2}
   m_IsPrefabParent: 0
@@ -2390,8 +2262,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7c1ee0df743d954583613169dc4a1e2, type: 2}
   m_IsPrefabParent: 0
@@ -2451,8 +2322,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5142f6227547a44a8d83fda8b921ebe, type: 2}
   m_IsPrefabParent: 0
@@ -2512,8 +2382,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc423bb1160d2c74c9e13ddde106be56, type: 2}
   m_IsPrefabParent: 0
@@ -2569,8 +2438,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5142f6227547a44a8d83fda8b921ebe, type: 2}
   m_IsPrefabParent: 0
@@ -2660,8 +2528,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f0f88986e1f71049aa162d46ae79c85, type: 2}
   m_IsPrefabParent: 0
@@ -2721,8 +2588,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f0f88986e1f71049aa162d46ae79c85, type: 2}
   m_IsPrefabParent: 0
@@ -2782,8 +2648,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e69277863b36c44d82ed32884b4348e, type: 2}
   m_IsPrefabParent: 0
@@ -2839,8 +2704,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2790fbe87a943cd4b9183b3a50e571e7, type: 2}
   m_IsPrefabParent: 0
@@ -2900,8 +2764,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a72476acdc619bc4ba34083daa4e5728, type: 2}
   m_IsPrefabParent: 0
@@ -2957,8 +2820,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2790fbe87a943cd4b9183b3a50e571e7, type: 2}
   m_IsPrefabParent: 0
@@ -3069,8 +2931,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7c1ee0df743d954583613169dc4a1e2, type: 2}
   m_IsPrefabParent: 0
@@ -3079,6 +2940,48 @@ Transform:
   m_PrefabParentObject: {fileID: 4504798723912676, guid: f7c1ee0df743d954583613169dc4a1e2,
     type: 2}
   m_PrefabInternal: {fileID: 918341304}
+--- !u!1001 &928241171
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4359790946845558, guid: d48284553e34cc442b0202ca7707cdc6, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359790946845558, guid: d48284553e34cc442b0202ca7707cdc6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359790946845558, guid: d48284553e34cc442b0202ca7707cdc6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359790946845558, guid: d48284553e34cc442b0202ca7707cdc6, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359790946845558, guid: d48284553e34cc442b0202ca7707cdc6, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359790946845558, guid: d48284553e34cc442b0202ca7707cdc6, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359790946845558, guid: d48284553e34cc442b0202ca7707cdc6, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.8660254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359790946845558, guid: d48284553e34cc442b0202ca7707cdc6, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d48284553e34cc442b0202ca7707cdc6, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &945942591
 Prefab:
   m_ObjectHideFlags: 0
@@ -3126,8 +3029,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2790fbe87a943cd4b9183b3a50e571e7, type: 2}
   m_IsPrefabParent: 0
@@ -3187,8 +3089,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a72476acdc619bc4ba34083daa4e5728, type: 2}
   m_IsPrefabParent: 0
@@ -3316,8 +3217,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2790fbe87a943cd4b9183b3a50e571e7, type: 2}
   m_IsPrefabParent: 0
@@ -3377,8 +3277,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f0f88986e1f71049aa162d46ae79c85, type: 2}
   m_IsPrefabParent: 0
@@ -3443,8 +3342,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f0f88986e1f71049aa162d46ae79c85, type: 2}
   m_IsPrefabParent: 0
@@ -3500,8 +3398,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2790fbe87a943cd4b9183b3a50e571e7, type: 2}
   m_IsPrefabParent: 0
@@ -3599,8 +3496,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a72476acdc619bc4ba34083daa4e5728, type: 2}
   m_IsPrefabParent: 0
@@ -3656,8 +3552,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2790fbe87a943cd4b9183b3a50e571e7, type: 2}
   m_IsPrefabParent: 0
@@ -3717,8 +3612,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7c1ee0df743d954583613169dc4a1e2, type: 2}
   m_IsPrefabParent: 0
@@ -3778,8 +3672,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba22b2682278d7a48b2d061753d30381, type: 2}
   m_IsPrefabParent: 0
@@ -3839,8 +3732,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a72476acdc619bc4ba34083daa4e5728, type: 2}
   m_IsPrefabParent: 0
@@ -3905,8 +3797,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba22b2682278d7a48b2d061753d30381, type: 2}
   m_IsPrefabParent: 0
@@ -3966,8 +3857,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a72476acdc619bc4ba34083daa4e5728, type: 2}
   m_IsPrefabParent: 0
@@ -4027,8 +3917,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc423bb1160d2c74c9e13ddde106be56, type: 2}
   m_IsPrefabParent: 0
@@ -4088,8 +3977,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba22b2682278d7a48b2d061753d30381, type: 2}
   m_IsPrefabParent: 0
@@ -4149,8 +4037,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c4f42c0aa882bc4db0861872058e56e, type: 2}
   m_IsPrefabParent: 0
@@ -4210,8 +4097,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5142f6227547a44a8d83fda8b921ebe, type: 2}
   m_IsPrefabParent: 0
@@ -4271,8 +4157,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e69277863b36c44d82ed32884b4348e, type: 2}
   m_IsPrefabParent: 0
@@ -4369,8 +4254,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7c1ee0df743d954583613169dc4a1e2, type: 2}
   m_IsPrefabParent: 0
@@ -4426,8 +4310,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2790fbe87a943cd4b9183b3a50e571e7, type: 2}
   m_IsPrefabParent: 0
@@ -4487,8 +4370,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc423bb1160d2c74c9e13ddde106be56, type: 2}
   m_IsPrefabParent: 0
@@ -4548,8 +4430,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5142f6227547a44a8d83fda8b921ebe, type: 2}
   m_IsPrefabParent: 0
@@ -4609,8 +4490,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc423bb1160d2c74c9e13ddde106be56, type: 2}
   m_IsPrefabParent: 0
@@ -4700,8 +4580,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18192507c5240dc4084b416a46fb1432, type: 2}
   m_IsPrefabParent: 0
@@ -4717,26 +4596,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 713284866}
     m_Modifications:
-    - target: {fileID: 114909977784619322, guid: 47c2c52338de6da428a6298596296730,
-        type: 2}
-      propertyPath: eventResponsePairs.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114325417709530794, guid: 47c2c52338de6da428a6298596296730,
-        type: 2}
-      propertyPath: eventResponsePairs.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114909977784619322, guid: 47c2c52338de6da428a6298596296730,
-        type: 2}
-      propertyPath: eventResponsePairs.Array.data[6].response.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114325417709530794, guid: 47c2c52338de6da428a6298596296730,
-        type: 2}
-      propertyPath: eventResponsePairs.Array.data[2].response.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 224614838504523518, guid: 47c2c52338de6da428a6298596296730,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -4837,105 +4696,21 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224365608769106776, guid: 47c2c52338de6da428a6298596296730,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 224219011653914664, guid: 47c2c52338de6da428a6298596296730,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000017647135
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224219011653914664, guid: 47c2c52338de6da428a6298596296730,
         type: 2}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114909977784619322, guid: 47c2c52338de6da428a6298596296730,
+    - target: {fileID: 224365608769106776, guid: 47c2c52338de6da428a6298596296730,
         type: 2}
-      propertyPath: eventResponsePairs.Array.data[6].gameEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: 35ffbb32af7e7ab4e9b52dce78706dcc,
-        type: 2}
-    - target: {fileID: 114909977784619322, guid: 47c2c52338de6da428a6298596296730,
-        type: 2}
-      propertyPath: eventResponsePairs.Array.data[6].response.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 337529930}
-    - target: {fileID: 114909977784619322, guid: 47c2c52338de6da428a6298596296730,
-        type: 2}
-      propertyPath: eventResponsePairs.Array.data[6].response.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SaveReplay
+      propertyPath: m_AnchorMin.y
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114909977784619322, guid: 47c2c52338de6da428a6298596296730,
-        type: 2}
-      propertyPath: eventResponsePairs.Array.data[6].response.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114909977784619322, guid: 47c2c52338de6da428a6298596296730,
-        type: 2}
-      propertyPath: eventResponsePairs.Array.data[6].response.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114909977784619322, guid: 47c2c52338de6da428a6298596296730,
-        type: 2}
-      propertyPath: eventResponsePairs.Array.data[6].response.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Draw
-      objectReference: {fileID: 0}
-    - target: {fileID: 114909977784619322, guid: 47c2c52338de6da428a6298596296730,
-        type: 2}
-      propertyPath: eventResponsePairs.Array.data[6].response.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114909977784619322, guid: 47c2c52338de6da428a6298596296730,
-        type: 2}
-      propertyPath: eventResponsePairs.Array.data[6].response.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114909977784619322, guid: 47c2c52338de6da428a6298596296730,
-        type: 2}
-      propertyPath: eventResponsePairs.Array.data[6].response.m_TypeName
-      value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      objectReference: {fileID: 0}
-    - target: {fileID: 114325417709530794, guid: 47c2c52338de6da428a6298596296730,
-        type: 2}
-      propertyPath: eventResponsePairs.Array.data[2].response.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 397630784}
-    - target: {fileID: 114325417709530794, guid: 47c2c52338de6da428a6298596296730,
-        type: 2}
-      propertyPath: eventResponsePairs.Array.data[2].response.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToggleOnTurnLabel
-      objectReference: {fileID: 0}
-    - target: {fileID: 114325417709530794, guid: 47c2c52338de6da428a6298596296730,
-        type: 2}
-      propertyPath: eventResponsePairs.Array.data[2].response.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114325417709530794, guid: 47c2c52338de6da428a6298596296730,
-        type: 2}
-      propertyPath: eventResponsePairs.Array.data[2].response.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114325417709530794, guid: 47c2c52338de6da428a6298596296730,
-        type: 2}
-      propertyPath: eventResponsePairs.Array.data[2].response.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114325417709530794, guid: 47c2c52338de6da428a6298596296730,
-        type: 2}
-      propertyPath: eventResponsePairs.Array.data[2].response.m_TypeName
-      value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      objectReference: {fileID: 0}
-    - target: {fileID: 114858419022561082, guid: 47c2c52338de6da428a6298596296730,
-        type: 2}
-      propertyPath: replayData
-      value: 
-      objectReference: {fileID: 11400000, guid: e3ca245394ec9e14a931c76683c80581,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 47c2c52338de6da428a6298596296730, type: 2}
   m_IsPrefabParent: 0
@@ -4990,8 +4765,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18192507c5240dc4084b416a46fb1432, type: 2}
   m_IsPrefabParent: 0
@@ -5081,8 +4855,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2790fbe87a943cd4b9183b3a50e571e7, type: 2}
   m_IsPrefabParent: 0
@@ -5134,8 +4907,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b2860077e2e11640bd4ce27a52ab0d8, type: 2}
   m_IsPrefabParent: 0
@@ -5195,8 +4967,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc423bb1160d2c74c9e13ddde106be56, type: 2}
   m_IsPrefabParent: 0
@@ -5252,8 +5023,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e69277863b36c44d82ed32884b4348e, type: 2}
   m_IsPrefabParent: 0
@@ -5313,8 +5083,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7c1ee0df743d954583613169dc4a1e2, type: 2}
   m_IsPrefabParent: 0
@@ -5374,8 +5143,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c4f42c0aa882bc4db0861872058e56e, type: 2}
   m_IsPrefabParent: 0
@@ -5435,8 +5203,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7c1ee0df743d954583613169dc4a1e2, type: 2}
   m_IsPrefabParent: 0
@@ -5496,8 +5263,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba22b2682278d7a48b2d061753d30381, type: 2}
   m_IsPrefabParent: 0
@@ -5557,8 +5323,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7c1ee0df743d954583613169dc4a1e2, type: 2}
   m_IsPrefabParent: 0
@@ -5618,8 +5383,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5142f6227547a44a8d83fda8b921ebe, type: 2}
   m_IsPrefabParent: 0
@@ -5679,8 +5443,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba22b2682278d7a48b2d061753d30381, type: 2}
   m_IsPrefabParent: 0
@@ -5740,8 +5503,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e69277863b36c44d82ed32884b4348e, type: 2}
   m_IsPrefabParent: 0
@@ -5801,8 +5563,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18192507c5240dc4084b416a46fb1432, type: 2}
   m_IsPrefabParent: 0
@@ -5862,8 +5623,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc423bb1160d2c74c9e13ddde106be56, type: 2}
   m_IsPrefabParent: 0
@@ -5923,8 +5683,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5142f6227547a44a8d83fda8b921ebe, type: 2}
   m_IsPrefabParent: 0
@@ -5984,8 +5743,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c4f42c0aa882bc4db0861872058e56e, type: 2}
   m_IsPrefabParent: 0
@@ -6041,8 +5799,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2790fbe87a943cd4b9183b3a50e571e7, type: 2}
   m_IsPrefabParent: 0
@@ -6102,8 +5859,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c4f42c0aa882bc4db0861872058e56e, type: 2}
   m_IsPrefabParent: 0
@@ -6163,8 +5919,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f0f88986e1f71049aa162d46ae79c85, type: 2}
   m_IsPrefabParent: 0
@@ -6254,8 +6009,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18192507c5240dc4084b416a46fb1432, type: 2}
   m_IsPrefabParent: 0
@@ -6315,8 +6069,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7c1ee0df743d954583613169dc4a1e2, type: 2}
   m_IsPrefabParent: 0
@@ -6376,8 +6129,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7c1ee0df743d954583613169dc4a1e2, type: 2}
   m_IsPrefabParent: 0
@@ -6437,8 +6189,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f0f88986e1f71049aa162d46ae79c85, type: 2}
   m_IsPrefabParent: 0
@@ -6498,8 +6249,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c4f42c0aa882bc4db0861872058e56e, type: 2}
   m_IsPrefabParent: 0
@@ -6559,8 +6309,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e69277863b36c44d82ed32884b4348e, type: 2}
   m_IsPrefabParent: 0
@@ -6620,8 +6369,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c4f42c0aa882bc4db0861872058e56e, type: 2}
   m_IsPrefabParent: 0
@@ -6681,8 +6429,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc423bb1160d2c74c9e13ddde106be56, type: 2}
   m_IsPrefabParent: 0
@@ -6778,8 +6525,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c4f42c0aa882bc4db0861872058e56e, type: 2}
   m_IsPrefabParent: 0
@@ -6839,8 +6585,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5142f6227547a44a8d83fda8b921ebe, type: 2}
   m_IsPrefabParent: 0
@@ -6900,8 +6645,7 @@ Prefab:
         type: 2}
       propertyPath: chessboardState
       value: 
-      objectReference: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18192507c5240dc4084b416a46fb1432, type: 2}
   m_IsPrefabParent: 0

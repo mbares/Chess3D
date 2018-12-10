@@ -29,7 +29,6 @@ public class PlayerMovesSerializer : MonoBehaviour
             FileStream file = File.Open(Application.persistentDataPath + "/" + name + ".dat", FileMode.Open);
             string data = (string)binaryFormatter.Deserialize(file);
 
-            Debug.Log(data);
             PlayerMoves playerMoves = StringToPlayerMoves(data);
 
             file.Close();
@@ -49,13 +48,6 @@ public class PlayerMovesSerializer : MonoBehaviour
             }
         }
         sb.Append("|");
-        for (int i = 0; i < playerMoves.notatedMoves.Count; ++i) {
-            sb.Append(playerMoves.notatedMoves[i]);
-            if (i != playerMoves.notatedMoves.Count - 1) {
-                sb.Append(",");
-            }
-        }
-        sb.Append("|");
         foreach (KeyValuePair<ChessboardPosition, PieceType> entry in playerMoves.pawnPromotions) {
             sb.Append(entry.Key + ":" + entry.Value + ",");
         }
@@ -71,21 +63,20 @@ public class PlayerMovesSerializer : MonoBehaviour
         PlayerMoves playerMoves = new PlayerMoves();
         string[] parts = data.Split('|');
         string[] chessMoves = parts[0].Split(',');
-        string[] notatedMoves = parts[1].Split(',');
-        string[] pawnPromotions = parts[2].Split(',');
+
 
         for (int i = 0; i < chessMoves.Length; ++i) {
             playerMoves.moves.Add(ChessMove.FromString(chessMoves[i]));
         }
 
-        for (int i = 0; i < notatedMoves.Length; ++i) {
-            playerMoves.notatedMoves.Add(notatedMoves[i]);
+        if (!string.IsNullOrEmpty(parts[1])) {
+            string[] pawnPromotions = parts[1].Split(',');
+            for (int i = 0; i < pawnPromotions.Length; ++i) {
+                string[] keyValueString = pawnPromotions[i].Split(':');
+                playerMoves.pawnPromotions.Add(ChessboardPositionConverter.StringToChessboardPosition(keyValueString[0]), (PieceType)Enum.Parse(typeof(PieceType), keyValueString[1]));
+            }
         }
 
-        for (int i = 0; i < pawnPromotions.Length; ++i) {
-            string[] keyValueString = pawnPromotions[i].Split(':');
-            playerMoves.pawnPromotions.Add(ChessboardPositionConverter.StringToChessboardPosition(keyValueString[0]), (PieceType)Enum.Parse(typeof(PieceType), keyValueString[1]));
-        }
         return playerMoves;
     }
 

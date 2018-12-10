@@ -64,7 +64,7 @@ public class PawnMovement : ChessPieceMovement
 
     public override void Move(ChessboardPosition position)
     {
-        if ((position.row - currentPosition.row) == 2) {
+        if (Mathf.Abs(position.row - currentPosition.row) == 2) {
             ActivateEnPassant(position);
         }
 
@@ -99,21 +99,26 @@ public class PawnMovement : ChessPieceMovement
     {
         if (position.column - 1 >= ChessboardPositionValidator.MIN_POSITION) {
             ChessboardPosition adjacentLeftPosition = new ChessboardPosition(position.column - 1, position.row);
-            ChessPiece adjacentChessPiece = chessboardState.GetChessPieceAtPosition(adjacentLeftPosition);
-            if (adjacentChessPiece != null && adjacentChessPiece.chessPieceInfo.type == PieceType.Pawn && adjacentChessPiece.controllingPlayer != chessPiece.controllingPlayer) {
-                enPassantManager.enPassantPosition = new ChessboardPosition(position.column, position.row - 1);
-                enPassantManager.pieceCausingEnPassant = chessPiece;
-                return;
-            }
+            SetEnPassantPositionIfValid(position, adjacentLeftPosition);
         }
 
         if (position.column + 1 <= ChessboardPositionValidator.MAX_POSITION) {
             ChessboardPosition adjacentRightPosition = new ChessboardPosition(position.column + 1, position.row);
-            ChessPiece adjacentChessPiece = chessboardState.GetChessPieceAtPosition(adjacentRightPosition);
-            if (adjacentChessPiece != null && adjacentChessPiece.chessPieceInfo.type == PieceType.Pawn && adjacentChessPiece.controllingPlayer != chessPiece.controllingPlayer) {
-                enPassantManager.enPassantPosition = new ChessboardPosition(position.column, position.row - 1);
-                enPassantManager.pieceCausingEnPassant = chessPiece;
+            SetEnPassantPositionIfValid(position, adjacentRightPosition);
+        }
+    }
+
+    private void SetEnPassantPositionIfValid(ChessboardPosition position, ChessboardPosition adjacentRightPosition)
+    {
+        ChessPiece adjacentChessPiece = chessboardState.GetChessPieceAtPosition(adjacentRightPosition);
+        if (adjacentChessPiece != null && adjacentChessPiece.chessPieceInfo.type == PieceType.Pawn && adjacentChessPiece.controllingPlayer != chessPiece.controllingPlayer) {
+            ChessboardPosition enPassantPosition;
+            if (chessPiece.controllingPlayer.piecesColor == PieceColor.White) {
+                enPassantPosition = new ChessboardPosition(position.column, position.row - 1);
+            } else {
+                enPassantPosition = new ChessboardPosition(position.column, position.row + 1);
             }
+            enPassantManager.SetEnPassantPosition(enPassantPosition, chessPiece);
         }
     }
 }

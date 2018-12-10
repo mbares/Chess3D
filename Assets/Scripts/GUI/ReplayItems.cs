@@ -12,18 +12,20 @@ public class ReplayItems : MonoBehaviour
     [SerializeField]
     private GameEvent playReplayEvent;
 
-    private Dictionary<string, PlayerMoves> allReplays;
+    private Dictionary<string, PlayerMoves> allReplays = new Dictionary<string, PlayerMoves>();
 
-    private void Start()
+    private void OnEnable()
     {
-        allReplays = PlayerMovesSerializer.GetAllReplays();
-        foreach (KeyValuePair<string, PlayerMoves> item in allReplays) {
-            GameObject replayObject = Instantiate(replayPrefab, transform);
-            Replay replay = replayObject.GetComponent<Replay>();
-            replay.playerMoves = item.Value;
-            replay.button.onClick.AddListener(() => replaysButton.HideReplaysPanel());
-            replay.button.onClick.AddListener(() => PlayReplay(replay));
-            replay.text.text = item.Key;
+        foreach (KeyValuePair<string, PlayerMoves> item in PlayerMovesSerializer.GetAllReplays()) {
+            if (!allReplays.ContainsKey(item.Key)) {
+                allReplays.Add(item.Key, item.Value);
+                GameObject replayObject = Instantiate(replayPrefab, transform);
+                Replay replay = replayObject.GetComponent<Replay>();
+                replay.playerMoves = item.Value;
+                replay.button.onClick.AddListener(() => replaysButton.HideReplaysPanel());
+                replay.button.onClick.AddListener(() => PlayReplay(replay));
+                replay.text.text = item.Key;
+            }
         }
     }
 
@@ -31,6 +33,5 @@ public class ReplayItems : MonoBehaviour
     {
         replayData.playerMoves = replay.playerMoves;
         playReplayEvent.Raise();
-
     }
 }

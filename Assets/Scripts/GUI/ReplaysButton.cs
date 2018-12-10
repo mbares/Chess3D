@@ -18,6 +18,10 @@ public class ReplaysButton : MonoBehaviour
     public void HideReplaysPanel()
     {
         replaysPanel.SetActive(false);
+    }
+
+    public void EnablePlayerInteraction()
+    {
         guiHidden.Raise();
     }
 }
