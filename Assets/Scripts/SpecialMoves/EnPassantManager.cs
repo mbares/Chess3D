@@ -17,11 +17,20 @@ public class EnPassantManager : ScriptableObject
 
     public void ClearEnPassantPosition()
     {
-        counter++;
-        
-        if (counter == 2) {
-            Reset();
+        if (enPassantPosition != null) {
+            counter++;
+
+            if (counter == 2) {
+                Reset();
+            }
         }
+    }
+
+    public void SetEnPassantPosition(ChessboardPosition enPassantPosition, ChessPiece pieceCausingEnPassant)
+    {
+        counter = 0;
+        this.enPassantPosition = enPassantPosition;
+        this.pieceCausingEnPassant = pieceCausingEnPassant;
     }
 
     public void Reset()

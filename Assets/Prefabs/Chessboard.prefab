@@ -305,6 +305,7 @@ GameObject:
   - component: {fileID: 114016642713242652}
   - component: {fileID: 114043469231069098}
   - component: {fileID: 114869130361250428}
+  - component: {fileID: 114418086438142318}
   m_Layer: 0
   m_Name: Chessboard
   m_TagString: Untagged
@@ -1629,6 +1630,24 @@ MonoBehaviour:
   delayBetweenMoves: 1
   newGameRequest: {fileID: 11400000, guid: 60f12f227a526f34b88cba5fee6865eb, type: 2}
   replayData: {fileID: 11400000, guid: e3ca245394ec9e14a931c76683c80581, type: 2}
+--- !u!114 &114418086438142318
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1807443961754400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db04c46a5593e32419dd9b942297c0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whiteAvailablePositions: {fileID: 11400000, guid: 1688ac70a514df2439ccefedbde743fb,
+    type: 2}
+  blackAvailablePositions: {fileID: 11400000, guid: 034ef3a3b45ff3a4681e6f65f84a66b1,
+    type: 2}
+  whitePieces: {fileID: 11400000, guid: 3b773de239d4f15449497bd07827c78e, type: 2}
+  blackPieces: {fileID: 11400000, guid: e924277b9d541be44967f8760749897a, type: 2}
+  endOfGameDetector: {fileID: 11400000, guid: e4423958725f1ee44a8875c433c1e2ee, type: 2}
 --- !u!114 &114869130361250428
 MonoBehaviour:
   m_ObjectHideFlags: 1

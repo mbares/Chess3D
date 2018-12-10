@@ -43,7 +43,6 @@ public class ChessMoveRecorder : ScriptableObject
         ChessMove lastMove = playerMoves.moves[playerMoves.moves.Count - 1];
         lastMoveMade = lastMove.PawnPromotionToAlgebraicNotation(promotedTo);
 
-        playerMoves.notatedMoves[playerMoves.notatedMoves.Count - 1] = lastMoveMade;
         playerMoves.pawnPromotions.Add(lastMove.to, type);
 
         pawnPromotionRewrite.Raise();

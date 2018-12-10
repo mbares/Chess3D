@@ -22,7 +22,6 @@ public class EndGamePanel : MonoBehaviour
             SetUp(gameOutcome);
             gameObject.SetActive(true);
             guiShown.Raise();
-        } else {
             startNewGameEvent.Raise();
         }
     }

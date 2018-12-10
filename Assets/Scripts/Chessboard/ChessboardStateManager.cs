@@ -12,8 +12,6 @@ public class ChessboardStateManager : ScriptableObject
 
     [SerializeField]
     private CheckDetector checkDetector;
-    [SerializeField]
-    private ChessboardPiecesLayout unfinishedGameLayout;
 
     private ChessPiece[,] piecesOnChessboardData = new ChessPiece[NUM_OF_COLUMNS, NUM_OF_ROWS];
 

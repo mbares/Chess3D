@@ -12,13 +12,11 @@ MonoBehaviour:
   m_Name: GameManager
   m_EditorClassIdentifier: 
   chessboardState: {fileID: 11400000, guid: f41d5499386241e48acde7b17a92085d, type: 2}
-  currentPlayer: {fileID: 11400000, guid: d25a185118f8f114eba0be7b101edab0, type: 2}
+  currentPlayer: {fileID: 11400000, guid: d585f835634621349a6c4b850e406dee, type: 2}
   blackPlayer: {fileID: 11400000, guid: d25a185118f8f114eba0be7b101edab0, type: 2}
   whitePlayer: {fileID: 11400000, guid: d585f835634621349a6c4b850e406dee, type: 2}
   chessMoveRecorder: {fileID: 11400000, guid: 5cc5dc039cbba464e97d109a976a0abe, type: 2}
   newGameStartedEvent: {fileID: 11400000, guid: 9e12b49f95ed605418a4f6638be76411,
-    type: 2}
-  continuedGameStartedEvent: {fileID: 11400000, guid: fd4836a38dc74c04b8db58edb03c2ab3,
     type: 2}
   newTurnEvent: {fileID: 11400000, guid: 83c7a58da99bf5f46b51598337f02493, type: 2}
   endOfGameDetector: {fileID: 11400000, guid: e4423958725f1ee44a8875c433c1e2ee, type: 2}

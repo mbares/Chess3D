@@ -5,20 +5,17 @@ using System;
 public class PlayerMoves
 {
     public List<ChessMove> moves = new List<ChessMove>();
-    public List<string> notatedMoves = new List<string>();
     public Dictionary<ChessboardPosition, PieceType> pawnPromotions = new Dictionary<ChessboardPosition, PieceType>();
 
     public void Clear()
     {
         moves.Clear();
-        notatedMoves.Clear();
         pawnPromotions.Clear();
     }
 
     public void Add(ChessMove move, string notatedMove)
     {
         moves.Add(move);
-        notatedMoves.Add(notatedMove);
     }
 }
 
@@ -57,7 +54,7 @@ public class ChessMove
         }
 
         if (movedPiece.chessPieceInfo.type != PieceType.Pawn) {
-            algebraicNotation = movedPiece.chessPieceInfo.label.ToString().Substring(1);
+            algebraicNotation += movedPiece.chessPieceInfo.label.ToString().Substring(1);
         }
 
         if (capturedPiece != null) {

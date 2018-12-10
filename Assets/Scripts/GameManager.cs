@@ -15,8 +15,6 @@ public class GameManager : ScriptableObject
     [SerializeField]
     private GameEvent newGameStartedEvent;
     [SerializeField]
-    private GameEvent continuedGameStartedEvent;
-    [SerializeField]
     private GameEvent newTurnEvent;
     [SerializeField]
     private EndOfGameDetector endOfGameDetector;
